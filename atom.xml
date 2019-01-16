@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-15T11:30:49.490Z</updated>
+  <updated>2019-01-15T15:37:36.189Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试  Holle world</title>
-    <link href="http://yoursite.com/2019/01/15/%E6%B5%8B%E8%AF%95-Holle-world/"/>
-    <id>http://yoursite.com/2019/01/15/测试-Holle-world/</id>
-    <published>2019-01-15T11:30:49.000Z</published>
-    <updated>2019-01-15T11:30:49.490Z</updated>
+    <title>react</title>
+    <link href="http://yoursite.com/2019/01/15/react/"/>
+    <id>http://yoursite.com/2019/01/15/react/</id>
+    <published>2019-01-15T15:37:25.000Z</published>
+    <updated>2019-01-15T15:37:36.189Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试  Holle world</title>
+    <link href="http://yoursite.com/2019/01/15/%E6%B5%8B%E8%AF%95-Holle-world/"/>
+    <id>http://yoursite.com/2019/01/15/测试-Holle-world/</id>
+    <published>2019-01-15T11:30:49.000Z</published>
+    <updated>2019-01-16T00:20:07.491Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="tags" scheme="http://yoursite.com/tags/tags/"/>
     
   </entry>
   
