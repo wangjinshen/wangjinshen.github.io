@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-19T12:04:06.843Z</updated>
+  <updated>2019-01-19T13:03:42.611Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>redux-persist- 数据持久化</title>
+    <link href="http://yoursite.com/2019/01/19/redux-persist-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <id>http://yoursite.com/2019/01/19/redux-persist-数据持久化/</id>
+    <published>2019-01-19T12:36:42.000Z</published>
+    <updated>2019-01-19T13:03:42.611Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install redux-persist</span><br></pre></td></tr></table></figure><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// configureStore.js</span></span><br><span class="line"><span class="comment">//引入redux</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; persistStore, persistReducer &#125; <span class="keyword">from</span> <span class="string">'redux-persist'</span></span><br><span class="line"><span class="keyword">import</span> storage <span class="keyword">from</span> <span class="string">'redux-persist/lib/storage'</span> <span class="comment">//defaults to localStorage for web and AsyncStorage for react-native 存到localStorage中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//默认Store</span></span><br><span class="line"><span class="keyword">const</span> initialState=&#123;</span><br><span class="line">        data：[]</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//订阅事件</span></span><br><span class="line"><span class="keyword">const</span> rootReducer = <span class="function">(<span class="params">state = initialState, &#123; type, payload &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"UPDATE"</span>: &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123; ...state, <span class="attr">data</span>: [...payload] &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> persistConfig = &#123;</span><br><span class="line">  key: <span class="string">'root'</span>,</span><br><span class="line">  storage,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> persistedReducer = persistReducer(persistConfig, rootReducer)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> store = createStore(persistedReducer)</span><br><span class="line">  <span class="keyword">let</span> persistor = persistStore(store)</span><br><span class="line">  <span class="keyword">return</span> &#123; store, persistor &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cla
+      
+    
+    </summary>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>node-fetch 跨域</title>
     <link href="http://yoursite.com/2019/01/19/node-fetch%E8%B7%A8%E5%9F%9F/"/>
     <id>http://yoursite.com/2019/01/19/node-fetch跨域/</id>
     <published>2019-01-19T11:46:48.000Z</published>
-    <updated>2019-01-19T12:04:06.843Z</updated>
+    <updated>2019-01-19T12:05:14.117Z</updated>
     
     <content type="html"><![CDATA[<h1 id="node-fetch"><a href="#node-fetch" class="headerlink" title="node-fetch"></a>node-fetch</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install node-fetch --save</span><br><span class="line">yarn add node-fetch</span><br></pre></td></tr></table></figure><h2 id="引入使用"><a href="#引入使用" class="headerlink" title="引入使用"></a>引入使用</h2><h3 id="get-请求"><a href="#get-请求" class="headerlink" title="get 请求"></a>get 请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">"node-fetch"</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    searchResult(str,statr,end) &#123;</span><br><span class="line">        str = <span class="built_in">encodeURIComponent</span>(str)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">result, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            fetch(<span class="string">"https://www.xiachufang.com/juno/weapp/v2/search/universal_search.json?q="</span> + str + <span class="string">"&amp;"</span> + <span class="string">"offset="</span> + statr + <span class="string">"&amp;"</span> + <span class="string">"limit="</span> + end).then(<span class="function"><span class="params">res</span> =&gt;</span></span><br><span class="line">                res.text()</span><br><span class="line">            ).then(<span class="function"><span class="params">response</span> =&gt;</span></span><br><span class="line">                result(response)</span><br><span class="line">            );</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="post-请求"><a href="#post-请求" class="headerlink" title="post 请求"></a>post 请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">"node-fetch"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    searchPOST(str,statr,end) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">result, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> body = &#123; <span class="attr">a</span>: end,<span class="attr">b</span>:statr &#125;;</span><br><span class="line">            fetch(<span class="string">'https://httpbin.org/post'</span>, &#123;</span><br><span class="line">                    method: <span class="string">'post'</span>,</span><br><span class="line">                    body:    <span class="built_in">JSON</span>.stringify(body),</span><br><span class="line">                &#125;)</span><br><span class="line">                .then(<span class="function"><span class="params">res</span> =&gt;</span> res.text())</span><br><span class="line">                .then(<span class="function"><span class="params">response</span> =&gt;</span>  result(response));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>npm地址： <a href="https://www.npmjs.com/package/node-fetch" target="_blank" rel="noopener">https://www.npmjs.com/package/node-fetch</a></p>]]></content>
     
@@ -37,7 +62,9 @@
     
       <category term="node" scheme="http://yoursite.com/tags/node/"/>
     
-      <category term="跨域，node-fetch" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F%EF%BC%8Cnode-fetch/"/>
+      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="node-fetch" scheme="http://yoursite.com/tags/node-fetch/"/>
     
   </entry>
   
