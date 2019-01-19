@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="阿王">
 <meta property="og:description" content="node- 连接 -mysql下载 mysql12yarn add mysqlnpm install mysql 引入 mysql12345678910111213//引入包var mysql  = require(&apos;mysql&apos;);//建立连接关系配置var config  = &amp;#123;    //ip  host     : &apos;localhost&apos;,    //mysql用户名  默认ro">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-19T03:15:10.776Z">
+<meta property="og:updated_time" content="2019-01-19T03:24:24.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node- 连接 mysql">
 <meta name="twitter:description" content="node- 连接 -mysql下载 mysql12yarn add mysqlnpm install mysql 引入 mysql12345678910111213//引入包var mysql  = require(&apos;mysql&apos;);//建立连接关系配置var config  = &amp;#123;    //ip  host     : &apos;localhost&apos;,    //mysql用户名  默认ro">
@@ -186,51 +186,20 @@
 <h2 id="引入-mysql"><a href="#引入-mysql" class="headerlink" title="引入 mysql"></a>引入 mysql</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入包</span></span><br><span class="line"><span class="keyword">var</span> mysql  = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line"><span class="comment">//建立连接关系配置</span></span><br><span class="line"><span class="keyword">var</span> config  = &#123;</span><br><span class="line">    <span class="comment">//ip</span></span><br><span class="line">  host     : <span class="string">'localhost'</span>,</span><br><span class="line">    <span class="comment">//mysql用户名  默认root</span></span><br><span class="line">  user     : <span class="string">'me'</span>,</span><br><span class="line">     <span class="comment">//mysql用户密码</span></span><br><span class="line">  password : <span class="string">'secret'</span>,</span><br><span class="line">    <span class="comment">//库名</span></span><br><span class="line">  database : <span class="string">'my_db'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="node-与-mysql-的普通连接"><a href="#node-与-mysql-的普通连接" class="headerlink" title="node 与 mysql 的普通连接"></a>node 与 mysql 的普通连接</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">query</span>(<span class="params">sql, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//建立联系</span></span><br><span class="line">    <span class="keyword">var</span> connection = mysql.createConnection(config);</span><br><span class="line">    <span class="comment">//监听连接是否成功   不成功抛出错误</span></span><br><span class="line">    connection.connect(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123; <span class="built_in">console</span>.log(err) &#125;);</span><br><span class="line">    <span class="comment">//查询</span></span><br><span class="line">    connection.query(sql, <span class="function"><span class="keyword">function</span>(<span class="params">qerr, rows, fields</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//关闭数据库连接</span></span><br><span class="line">        connection.end(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123; <span class="built_in">console</span>.log(err) &#125;);</span><br><span class="line">        <span class="comment">//事件驱动回调</span></span><br><span class="line">        callback(qerr, rows, fields);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line">query(<span class="string">"mysql语句"</span>,callback(err,rows, fields)&#123;</span><br><span class="line">   <span class="comment">//err 错误信息</span></span><br><span class="line">   <span class="comment">//rows 结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="node-链接-mysql-创建连接池"><a href="#node-链接-mysql-创建连接池" class="headerlink" title="node 链接 mysql 创建连接池"></a>node 链接 mysql 创建连接池</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> connection=mysql.createPool(config.dev_sql_config)</span><br><span class="line"><span class="keyword">const</span> query=<span class="function">(<span class="params">sql</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">    connection.getConnection(<span class="function">(<span class="params">err,connect</span>)=&gt;</span>&#123;</span><br><span class="line">      connect.query(sql,(sqlerr,rows,fields)=&gt;&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err)</span><br><span class="line">          reject(err)</span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        resolve(rows)</span><br><span class="line">        <span class="comment">//释放连接</span></span><br><span class="line">        connect.release()</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="常用数据库操作语句"><a href="#常用数据库操作语句" class="headerlink" title="常用数据库操作语句"></a>常用数据库操作语句</h2><h3 id="表查询语句"><a href="#表查询语句" class="headerlink" title="表查询语句"></a>表查询语句</h3><ul>
-<li><p>字符串查询范围</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">where</span> <span class="keyword">id</span>=’aa’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数值查询范围</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> school <span class="keyword">where</span> <span class="keyword">num</span>&gt;<span class="number">1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>模糊查询</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> ‘% 陈 %’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数据截取（截取前十条数据）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">10</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数据查询排序 (desc 降序，asc 升序）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">10</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>表连接查询（多表查询，表结构相同）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> * <span class="keyword">from</span> table_a <span class="keyword">UNION</span> ALL <span class="keyword">select</span> * <span class="keyword">from</span> table_b)<span class="keyword">as</span> tabel_all <span class="string">"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="表插入语句"><a href="#表插入语句" class="headerlink" title="表插入语句"></a>表插入语句</h3><ul>
-<li><p>单纯插入表数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tabel_a(<span class="keyword">id</span>,<span class="keyword">name</span>) <span class="keyword">values</span>(<span class="number">1</span>,”chen”)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建新表，并复制另外一个表格中的数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">into</span> tabel_b <span class="keyword">from</span> table_a</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>复制另外一个表中数据进行插入</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tabte_b(<span class="keyword">id</span>,<span class="keyword">name</span>) <span class="keyword">select</span> <span class="keyword">id</span>，<span class="keyword">name</span> <span class="keyword">from</span> tabel_a</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除表数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> class_one_list <span class="keyword">where</span> <span class="keyword">id</span>=‘<span class="number">1</span>’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新表数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">update</span> class_one_list <span class="keyword">set</span> twoListNum=’<span class="number">1</span>’,artListNum=’<span class="number">2</span>’ <span class="keyword">where</span> <span class="keyword">id</span>=’<span class="number">2</span>’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> person (<span class="built_in">number</span> <span class="built_in">INT</span>(<span class="number">11</span>), <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>), birthday <span class="built_in">DATE</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改表名</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table table_name rename table_new_name</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除表</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE  tbl_name;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<h2 id="常用数据库操作语句"><a href="#常用数据库操作语句" class="headerlink" title="常用数据库操作语句"></a>常用数据库操作语句</h2><h3 id="表查询语句"><a href="#表查询语句" class="headerlink" title="表查询语句"></a>表查询语句</h3><p>字符串查询范围<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * <span class="keyword">from</span> school where id=’aa’</span><br></pre></td></tr></table></figure></p>
+<p>数值查询范围<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,name <span class="keyword">from</span> school where num&gt;<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>模糊查询<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * <span class="keyword">from</span> school where name like ‘% 陈 %’</span><br></pre></td></tr></table></figure></p>
+<p>数据截取（截取前十条数据）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * <span class="keyword">from</span> school limit <span class="number">0</span>,<span class="number">10</span></span><br></pre></td></tr></table></figure></p>
+<p>数据查询排序 (desc 降序，asc 升序）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * <span class="keyword">from</span> school limit <span class="number">0</span>,<span class="number">10</span> order by desc</span><br></pre></td></tr></table></figure></p>
+<p>表连接查询（多表查询，表结构相同）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"select * from (select * from table_a UNION ALL select * from table_b)as tabel_all "</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="表插入语句"><a href="#表插入语句" class="headerlink" title="表插入语句"></a>表插入语句</h3><p>单纯插入表数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into tabel_a(id,name) values(<span class="number">1</span>,”chen”)</span><br></pre></td></tr></table></figure></p>
+<p>创建新表，并复制另外一个表格中的数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,name into tabel_b <span class="keyword">from</span> table_a</span><br></pre></td></tr></table></figure></p>
+<p>复制另外一个表中数据进行插入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into tabte_b(id,name) select id，name <span class="keyword">from</span> tabel_a</span><br></pre></td></tr></table></figure></p>
+<p>删除表数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> class_one_list where id=‘<span class="number">1</span>’</span><br></pre></td></tr></table></figure></p>
+<p>更新表数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update class_one_list set twoListNum=’<span class="number">1</span>’,artListNum=’<span class="number">2</span>’ where id=’<span class="number">2</span>’</span><br></pre></td></tr></table></figure></p>
+<p>创建表<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> person (<span class="built_in">number</span> <span class="built_in">INT</span>(<span class="number">11</span>), <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>), birthday <span class="built_in">DATE</span>);</span><br></pre></td></tr></table></figure></p>
+<p>修改表名<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table table_name rename table_new_name</span><br></pre></td></tr></table></figure></p>
+<p>删除表<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE  tbl_name;</span><br></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -239,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-19T03:15:10.776Z" itemprop="dateUpdated">2019-01-19 11:15:10</time>
+    Last updated: <time datetime="2019-01-19T03:24:24.122Z" itemprop="dateUpdated">2019-01-19 11:24:24</time>
 </span><br>
 
 
@@ -320,7 +289,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/19/谷歌/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">谷歌</h4>
+      </a>
+    </div>
   
 
   
