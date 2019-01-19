@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>node- 连接 mysql | 阿王 | 做一个爱折腾的程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#03A9F4">
+    <meta name="baidu-site-verification" content="PDjs0tEu7l">
+    
+    
+    <meta name="keywords" content="node,mysql">
+    <meta name="description" content="node- 连接 -mysql下载 mysql12yarn add mysqlnpm install mysql 引入 mysql12345678910111213//引入包var mysql  = require(&apos;mysql&apos;);//建立连接关系配置var config  = &amp;#123;    //ip  host     : &apos;localhost&apos;,    //mysql用户名  默认ro">
+<meta name="keywords" content="node,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node- 连接 mysql">
+<meta property="og:url" content="http://yoursite.com/2019/01/19/mysql-连接池/index.html">
+<meta property="og:site_name" content="阿王">
+<meta property="og:description" content="node- 连接 -mysql下载 mysql12yarn add mysqlnpm install mysql 引入 mysql12345678910111213//引入包var mysql  = require(&apos;mysql&apos;);//建立连接关系配置var config  = &amp;#123;    //ip  host     : &apos;localhost&apos;,    //mysql用户名  默认ro">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-19T03:15:10.776Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node- 连接 mysql">
+<meta name="twitter:description" content="node- 连接 -mysql下载 mysql12yarn add mysqlnpm install mysql 引入 mysql12345678910111213//引入包var mysql  = require(&apos;mysql&apos;);//建立连接关系配置var config  = &amp;#123;    //ip  host     : &apos;localhost&apos;,    //mysql用户名  默认ro">
+    
+        <link rel="alternate" type="application/atom+xml" title="阿王" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon-20190115095607402.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">王瑾深</h5>
+          <a href="mailto:807253330@qq.com" title="807253330@qq.com" class="mail">807253330@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangjinshen" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">node- 连接 mysql</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">node- 连接 mysql</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-19T02:37:30.000Z" itemprop="datePublished" class="page-time">
+  2019-01-19
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#node-连接-mysql"><span class="post-toc-number">1.</span> <span class="post-toc-text">node- 连接 -mysql</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载-mysql"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">下载 mysql</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引入-mysql"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">引入 mysql</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#node-与-mysql-的普通连接"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">node 与 mysql 的普通连接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#node-链接-mysql-创建连接池"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">node 链接 mysql 创建连接池</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用数据库操作语句"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">常用数据库操作语句</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表查询语句"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">表查询语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表插入语句"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">表插入语句</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-mysql-连接池" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">node- 连接 mysql</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-19 10:37:30" datetime="2019-01-19T02:37:30.000Z" itemprop="datePublished">2019-01-19</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="node-连接-mysql"><a href="#node-连接-mysql" class="headerlink" title="node- 连接 -mysql"></a>node- 连接 -mysql</h1><h2 id="下载-mysql"><a href="#下载-mysql" class="headerlink" title="下载 mysql"></a>下载 mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn add mysql</span><br><span class="line">npm install mysql</span><br></pre></td></tr></table></figure>
+<h2 id="引入-mysql"><a href="#引入-mysql" class="headerlink" title="引入 mysql"></a>引入 mysql</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入包</span></span><br><span class="line"><span class="keyword">var</span> mysql  = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line"><span class="comment">//建立连接关系配置</span></span><br><span class="line"><span class="keyword">var</span> config  = &#123;</span><br><span class="line">    <span class="comment">//ip</span></span><br><span class="line">  host     : <span class="string">'localhost'</span>,</span><br><span class="line">    <span class="comment">//mysql用户名  默认root</span></span><br><span class="line">  user     : <span class="string">'me'</span>,</span><br><span class="line">     <span class="comment">//mysql用户密码</span></span><br><span class="line">  password : <span class="string">'secret'</span>,</span><br><span class="line">    <span class="comment">//库名</span></span><br><span class="line">  database : <span class="string">'my_db'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="node-与-mysql-的普通连接"><a href="#node-与-mysql-的普通连接" class="headerlink" title="node 与 mysql 的普通连接"></a>node 与 mysql 的普通连接</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">query</span>(<span class="params">sql, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//建立联系</span></span><br><span class="line">    <span class="keyword">var</span> connection = mysql.createConnection(config);</span><br><span class="line">    <span class="comment">//监听连接是否成功   不成功抛出错误</span></span><br><span class="line">    connection.connect(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123; <span class="built_in">console</span>.log(err) &#125;);</span><br><span class="line">    <span class="comment">//查询</span></span><br><span class="line">    connection.query(sql, <span class="function"><span class="keyword">function</span>(<span class="params">qerr, rows, fields</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//关闭数据库连接</span></span><br><span class="line">        connection.end(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123; <span class="built_in">console</span>.log(err) &#125;);</span><br><span class="line">        <span class="comment">//事件驱动回调</span></span><br><span class="line">        callback(qerr, rows, fields);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line">query(<span class="string">"mysql语句"</span>,callback(err,rows, fields)&#123;</span><br><span class="line">   <span class="comment">//err 错误信息</span></span><br><span class="line">   <span class="comment">//rows 结果</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="node-链接-mysql-创建连接池"><a href="#node-链接-mysql-创建连接池" class="headerlink" title="node 链接 mysql 创建连接池"></a>node 链接 mysql 创建连接池</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> connection=mysql.createPool(config.dev_sql_config)</span><br><span class="line"><span class="keyword">const</span> query=<span class="function">(<span class="params">sql</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">    connection.getConnection(<span class="function">(<span class="params">err,connect</span>)=&gt;</span>&#123;</span><br><span class="line">      connect.query(sql,(sqlerr,rows,fields)=&gt;&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err)</span><br><span class="line">          reject(err)</span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        resolve(rows)</span><br><span class="line">        <span class="comment">//释放连接</span></span><br><span class="line">        connect.release()</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用数据库操作语句"><a href="#常用数据库操作语句" class="headerlink" title="常用数据库操作语句"></a>常用数据库操作语句</h2><h3 id="表查询语句"><a href="#表查询语句" class="headerlink" title="表查询语句"></a>表查询语句</h3><ul>
+<li><p>字符串查询范围</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">where</span> <span class="keyword">id</span>=’aa’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数值查询范围</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> school <span class="keyword">where</span> <span class="keyword">num</span>&gt;<span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模糊查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> ‘% 陈 %’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据截取（截取前十条数据）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据查询排序 (desc 降序，asc 升序）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> school <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">10</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表连接查询（多表查询，表结构相同）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> * <span class="keyword">from</span> table_a <span class="keyword">UNION</span> ALL <span class="keyword">select</span> * <span class="keyword">from</span> table_b)<span class="keyword">as</span> tabel_all <span class="string">"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="表插入语句"><a href="#表插入语句" class="headerlink" title="表插入语句"></a>表插入语句</h3><ul>
+<li><p>单纯插入表数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tabel_a(<span class="keyword">id</span>,<span class="keyword">name</span>) <span class="keyword">values</span>(<span class="number">1</span>,”chen”)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建新表，并复制另外一个表格中的数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">into</span> tabel_b <span class="keyword">from</span> table_a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制另外一个表中数据进行插入</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tabte_b(<span class="keyword">id</span>,<span class="keyword">name</span>) <span class="keyword">select</span> <span class="keyword">id</span>，<span class="keyword">name</span> <span class="keyword">from</span> tabel_a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> class_one_list <span class="keyword">where</span> <span class="keyword">id</span>=‘<span class="number">1</span>’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新表数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">update</span> class_one_list <span class="keyword">set</span> twoListNum=’<span class="number">1</span>’,artListNum=’<span class="number">2</span>’ <span class="keyword">where</span> <span class="keyword">id</span>=’<span class="number">2</span>’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> person (<span class="built_in">number</span> <span class="built_in">INT</span>(<span class="number">11</span>), <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>), birthday <span class="built_in">DATE</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table table_name rename table_new_name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE  tbl_name;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-19T03:15:10.776Z" itemprop="dateUpdated">2019-01-19 11:15:10</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/19/mysql-连接池/" target="_blank" rel="external">http://yoursite.com/2019/01/19/mysql-连接池/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.png" alt="王瑾深">
+            王瑾深
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/19/mysql-连接池/&title=《node- 连接 mysql》 — 阿王&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/19/mysql-连接池/&title=《node- 连接 mysql》 — 阿王&source=做一个爱折腾的程序员" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/19/mysql-连接池/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node- 连接 mysql》 — 阿王&url=http://yoursite.com/2019/01/19/mysql-连接池/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/19/mysql-连接池/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/18/vue-route/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-router</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/fales" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/fales" data-alipay="/fales">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>王瑾深 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/19/mysql-连接池/&title=《node- 连接 mysql》 — 阿王&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/19/mysql-连接池/&title=《node- 连接 mysql》 — 阿王&source=做一个爱折腾的程序员" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/19/mysql-连接池/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node- 连接 mysql》 — 阿王&url=http://yoursite.com/2019/01/19/mysql-连接池/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/19/mysql-连接池/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/01/19/mysql-连接池/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
