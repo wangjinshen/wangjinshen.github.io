@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-19T05:43:40.029Z</updated>
+  <updated>2019-01-19T12:04:06.843Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node-fetch 跨域</title>
+    <link href="http://yoursite.com/2019/01/19/node-fetch%E8%B7%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2019/01/19/node-fetch跨域/</id>
+    <published>2019-01-19T11:46:48.000Z</published>
+    <updated>2019-01-19T12:04:06.843Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="node-fetch"><a href="#node-fetch" class="headerlink" title="node-fetch"></a>node-fetch</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install node-fetch --save</span><br><span class="line">yarn add node-fetch</span><br></pre></td></tr></table></figure><h2 id="引入使用"><a href="#引入使用" class="headerlink" title="引入使用"></a>引入使用</h2><h3 id="get-请求"><a href="#get-请求" class="headerlink" title="get 请求"></a>get 请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">"node-fetch"</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    searchResult(str,statr,end) &#123;</span><br><span class="line">        str = <span class="built_in">encodeURIComponent</span>(str)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">result, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            fetch(<span class="string">"https://www.xiachufang.com/juno/weapp/v2/search/universal_search.json?q="</span> + str + <span class="string">"&amp;"</span> + <span class="string">"offset="</span> + statr + <span class="string">"&amp;"</span> + <span class="string">"limit="</span> + end).then(<span class="function"><span class="params">res</span> =&gt;</span></span><br><span class="line">                res.text()</span><br><span class="line">            ).then(<span class="function"><span class="params">response</span> =&gt;</span></span><br><span class="line">                result(response)</span><br><span class="line">            );</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="post-请求"><a href="#post-请求" class="headerlink" title="post 请求"></a>post 请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">"node-fetch"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    searchPOST(str,statr,end) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">result, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> body = &#123; <span class="attr">a</span>: end,<span class="attr">b</span>:statr &#125;;</span><br><span class="line">            fetch(<span class="string">'https://httpbin.org/post'</span>, &#123;</span><br><span class="line">                    method: <span class="string">'post'</span>,</span><br><span class="line">                    body:    <span class="built_in">JSON</span>.stringify(body),</span><br><span class="line">                &#125;)</span><br><span class="line">                .then(<span class="function"><span class="params">res</span> =&gt;</span> res.text())</span><br><span class="line">                .then(<span class="function"><span class="params">response</span> =&gt;</span>  result(response));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>npm地址： <a href="https://www.npmjs.com/package/node-fetch" target="_blank" rel="noopener">https://www.npmjs.com/package/node-fetch</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;node-fetch&quot;&gt;&lt;a href=&quot;#node-fetch&quot; class=&quot;headerlink&quot; title=&quot;node-fetch&quot;&gt;&lt;/a&gt;node-fetch&lt;/h1&gt;&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+      <category term="跨域，node-fetch" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F%EF%BC%8Cnode-fetch/"/>
+    
+  </entry>
   
   <entry>
     <title>谷歌</title>
