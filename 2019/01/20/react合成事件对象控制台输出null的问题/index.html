@@ -14,26 +14,29 @@
     
     
     
-    <title>redux-persist- 数据持久化 | 阿王 | 做一个爱折腾的程序员</title>
+    <title>对象控制台输出 null 的问题 | 阿王 | 做一个爱折腾的程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#03A9F4">
     <meta name="baidu-site-verification" content="PDjs0tEu7l">
     
     
-    <meta name="keywords" content="react,redux">
-    <meta name="description" content="安装1npm install redux-persist 基本用法12345678910111213141516171819202122232425262728293031323334// configureStore.js//引入reduximport &amp;#123; createStore &amp;#125; from &apos;redux&apos;import &amp;#123; persistStore, persis">
-<meta name="keywords" content="react,redux">
+    <meta name="keywords" content="react">
+    <meta name="description" content="reactjs 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null                                                                                             null              解决的办法很简单，在 console.log(e">
+<meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redux-persist- 数据持久化">
-<meta property="og:url" content="http://yoursite.com/2019/01/19/redux-persist-数据持久化/index.html">
+<meta property="og:title" content="对象控制台输出 null 的问题">
+<meta property="og:url" content="http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/index.html">
 <meta property="og:site_name" content="阿王">
-<meta property="og:description" content="安装1npm install redux-persist 基本用法12345678910111213141516171819202122232425262728293031323334// configureStore.js//引入reduximport &amp;#123; createStore &amp;#125; from &apos;redux&apos;import &amp;#123; persistStore, persis">
+<meta property="og:description" content="reactjs 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null                                                                                             null              解决的办法很简单，在 console.log(e">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-19T13:03:42.611Z">
+<meta property="og:image" content="http://yoursite.com/img/reactEvent.png">
+<meta property="og:image" content="http://yoursite.com/img/reactResEvent.png">
+<meta property="og:updated_time" content="2019-01-20T12:03:55.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redux-persist- 数据持久化">
-<meta name="twitter:description" content="安装1npm install redux-persist 基本用法12345678910111213141516171819202122232425262728293031323334// configureStore.js//引入reduximport &amp;#123; createStore &amp;#125; from &apos;redux&apos;import &amp;#123; persistStore, persis">
+<meta name="twitter:title" content="对象控制台输出 null 的问题">
+<meta name="twitter:description" content="reactjs 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null                                                                                             null              解决的办法很简单，在 console.log(e">
+<meta name="twitter:image" content="http://yoursite.com/img/reactEvent.png">
     
         <link rel="alternate" type="application/atom+xml" title="阿王" href="/atom.xml">
     
@@ -114,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">redux-persist- 数据持久化</div>
+        <div class="flex-col header-title ellipsis">对象控制台输出 null 的问题</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -136,11 +139,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">redux-persist- 数据持久化</h1>
+        <h1 class="title">对象控制台输出 null 的问题</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-01-19T12:36:42.000Z" itemprop="datePublished" class="page-time">
-  2019-01-19
+                <time datetime="2019-01-20T11:24:35.000Z" itemprop="datePublished" class="page-time">
+  2019-01-20
 </time>
 
 
@@ -159,17 +162,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本用法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本用法</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#reactjs-中-event-对象控制台输出-null-的问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">reactjs 中 event 对象控制台输出 null 的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在-react-中输出-event-对象，在控制台查看是-null"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">在 react 中输出 event 对象，在控制台查看是 null</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决的办法很简单，在-console-log-event-前使用-event-的-persist-方法即可。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结果"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">结果</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-redux-persist-数据持久化" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="reactjs-react合成事件对象控制台输出null的问题" class="post-article article-type-reactjs fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">redux-persist- 数据持久化</h1>
+        <h1 class="post-card-title">对象控制台输出 null 的问题</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-01-19 20:36:42" datetime="2019-01-19T12:36:42.000Z" itemprop="datePublished">2019-01-19</time>
+            <time class="post-time" title="2019-01-20 19:24:35" datetime="2019-01-20T11:24:35.000Z" itemprop="datePublished">2019-01-20</time>
 
             
 
@@ -182,8 +185,21 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install redux-persist</span><br></pre></td></tr></table></figure>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// configureStore.js</span></span><br><span class="line"><span class="comment">//引入redux</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; persistStore, persistReducer &#125; <span class="keyword">from</span> <span class="string">'redux-persist'</span></span><br><span class="line"><span class="keyword">import</span> storage <span class="keyword">from</span> <span class="string">'redux-persist/lib/storage'</span> <span class="comment">//defaults to localStorage for web and AsyncStorage for react-native 存到localStorage中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//默认Store</span></span><br><span class="line"><span class="keyword">const</span> initialState=&#123;</span><br><span class="line">        data：[]</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//订阅事件</span></span><br><span class="line"><span class="keyword">const</span> rootReducer = <span class="function">(<span class="params">state = initialState, &#123; type, payload &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"UPDATE"</span>: &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123; ...state, <span class="attr">data</span>: [...payload] &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> persistConfig = &#123;</span><br><span class="line">  key: <span class="string">'root'</span>,</span><br><span class="line">  storage,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> persistedReducer = persistReducer(persistConfig, rootReducer)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> store = createStore(persistedReducer)</span><br><span class="line">  <span class="keyword">let</span> persistor = persistStore(store)</span><br><span class="line">  <span class="keyword">return</span> &#123; store, persistor &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="reactjs-中-event-对象控制台输出-null-的问题"><a href="#reactjs-中-event-对象控制台输出-null-的问题" class="headerlink" title="reactjs 中 event 对象控制台输出 null 的问题"></a>reactjs 中 event 对象控制台输出 null 的问题</h1><h2 id="在-react-中输出-event-对象，在控制台查看是-null"><a href="#在-react-中输出-event-对象，在控制台查看是-null" class="headerlink" title="在 react 中输出 event 对象，在控制台查看是 null"></a>在 react 中输出 event 对象，在控制台查看是 null</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/reactEvent.png" alt="null" title="">
+                </div>
+                <div class="image-caption">null</div>
+            </figure>
+<h2 id="解决的办法很简单，在-console-log-event-前使用-event-的-persist-方法即可。"><a href="#解决的办法很简单，在-console-log-event-前使用-event-的-persist-方法即可。" class="headerlink" title="解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。"></a>解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div onClick=&#123;</span><br><span class="line">      (e)=&gt;&#123;</span><br><span class="line">        e.persist()</span><br><span class="line">        console.log(e)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;&gt;</span><br><span class="line">    点击</span><br><span class="line">    &lt;/div&gt;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/reactResEvent.png" alt="结果" title="">
+                </div>
+                <div class="image-caption">结果</div>
+            </figure>
 
         </div>
 
@@ -192,12 +208,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-19T13:03:42.611Z" itemprop="dateUpdated">2019-01-19 21:03:42</time>
+    Last updated: <time datetime="2019-01-20T12:03:55.930Z" itemprop="dateUpdated">2019-01-20 20:03:55</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/19/redux-persist-数据持久化/" target="_blank" rel="external">http://yoursite.com/2019/01/19/redux-persist-数据持久化/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/20/react合成事件对象控制台输出null的问题/" target="_blank" rel="external">http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/</a>
         
     </div>
     
@@ -218,7 +234,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redux/">redux</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
 
 
             
@@ -228,7 +244,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/&title=《redux-persist- 数据持久化》 — 阿王&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/&title=《对象控制台输出 null 的问题》 — 阿王&pic=http://yoursite.com/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -238,22 +254,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/&title=《redux-persist- 数据持久化》 — 阿王&source=做一个爱折腾的程序员" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/&title=《对象控制台输出 null 的问题》 — 阿王&source=做一个爱折腾的程序员" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/19/redux-persist-数据持久化/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《redux-persist- 数据持久化》 — 阿王&url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《对象控制台输出 null 的问题》 — 阿王&url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -273,21 +289,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/01/20/react合成事件对象控制台输出null的问题/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">对象控制台输出 null 的问题</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/01/19/node-fetch跨域/" id="post-next" class="post-nav-link">
+      <a href="/2019/01/19/redux-persist-数据持久化/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">node-fetch 跨域</h4>
+        <h4 class="title">redux-persist- 数据持久化</h4>
       </a>
     </div>
   
@@ -383,7 +392,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/&title=《redux-persist- 数据持久化》 — 阿王&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/&title=《对象控制台输出 null 的问题》 — 阿王&pic=http://yoursite.com/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -393,22 +402,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/&title=《redux-persist- 数据持久化》 — 阿王&source=做一个爱折腾的程序员" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/&title=《对象控制台输出 null 的问题》 — 阿王&source=做一个爱折腾的程序员" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/19/redux-persist-数据持久化/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《redux-persist- 数据持久化》 — 阿王&url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《对象控制台输出 null 的问题》 — 阿王&url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/19/redux-persist-数据持久化/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -419,7 +428,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/01/19/redux-persist-数据持久化/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/" alt="微信分享二维码">
 </div>
 
 
