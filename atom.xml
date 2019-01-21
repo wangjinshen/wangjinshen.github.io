@@ -5,9 +5,9 @@
   <subtitle>做一个爱折腾的程序员</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://github.com/wangjinshen/"/>
   <updated>2019-01-20T12:09:02.749Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://github.com/wangjinshen/</id>
   
   <author>
     <name>王瑾深</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>react对象控制台输出 null 的问题</title>
-    <link href="http://yoursite.com/2019/01/20/react%E5%90%88%E6%88%90%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BAnull%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2019/01/20/react合成事件对象控制台输出null的问题/</id>
+    <link href="https://github.com/wangjinshen/2019/01/20/react%E5%90%88%E6%88%90%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BAnull%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://github.com/wangjinshen/2019/01/20/react合成事件对象控制台输出null的问题/</id>
     <published>2019-01-20T11:24:35.000Z</published>
     <updated>2019-01-20T12:09:02.749Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>redux-persist- 数据持久化</title>
-    <link href="http://yoursite.com/2019/01/19/redux-persist-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    <id>http://yoursite.com/2019/01/19/redux-persist-数据持久化/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/redux-persist-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/redux-persist-数据持久化/</id>
     <published>2019-01-19T12:36:42.000Z</published>
     <updated>2019-01-19T13:03:42.611Z</updated>
     
@@ -58,16 +58,16 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
-      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
+      <category term="redux" scheme="https://github.com/wangjinshen/tags/redux/"/>
     
   </entry>
   
   <entry>
     <title>node-fetch 跨域</title>
-    <link href="http://yoursite.com/2019/01/19/node-fetch%E8%B7%A8%E5%9F%9F/"/>
-    <id>http://yoursite.com/2019/01/19/node-fetch跨域/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/node-fetch%E8%B7%A8%E5%9F%9F/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/node-fetch跨域/</id>
     <published>2019-01-19T11:46:48.000Z</published>
     <updated>2019-01-19T12:05:14.117Z</updated>
     
@@ -83,41 +83,41 @@
     </summary>
     
     
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+      <category term="node" scheme="https://github.com/wangjinshen/tags/node/"/>
     
-      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+      <category term="跨域" scheme="https://github.com/wangjinshen/tags/%E8%B7%A8%E5%9F%9F/"/>
     
-      <category term="node-fetch" scheme="http://yoursite.com/tags/node-fetch/"/>
+      <category term="node-fetch" scheme="https://github.com/wangjinshen/tags/node-fetch/"/>
     
   </entry>
   
   <entry>
     <title>谷歌</title>
-    <link href="http://yoursite.com/2019/01/19/%E8%B0%B7%E6%AD%8C/"/>
-    <id>http://yoursite.com/2019/01/19/谷歌/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/%E8%B0%B7%E6%AD%8C/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/谷歌/</id>
     <published>2019-01-19T05:41:19.000Z</published>
     <updated>2019-01-19T05:43:40.029Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="学习地址"><a href="#学习地址" class="headerlink" title="学习地址"></a>学习地址</h1><p><a href="https://github.com/bannedbook" target="_blank" rel="noopener">https://github.com/bannedbook</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="学习地址"><a href="#学习地址" class="headerlink" title="学习地址"></a>学习地址</h1><p><a href="https://github.com/bannedbook">https://github.com/bannedbook</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;学习地址&quot;&gt;&lt;a href=&quot;#学习地址&quot; class=&quot;headerlink&quot; title=&quot;学习地址&quot;&gt;&lt;/a&gt;学习地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/bannedbook&quot; target=&quot;_blank&quot; rel=&quot;n
+        &lt;h1 id=&quot;学习地址&quot;&gt;&lt;a href=&quot;#学习地址&quot; class=&quot;headerlink&quot; title=&quot;学习地址&quot;&gt;&lt;/a&gt;学习地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/bannedbook&quot;&gt;https://github.com/ban
       
     
     </summary>
     
     
-      <category term="【谷歌】" scheme="http://yoursite.com/tags/%E3%80%90%E8%B0%B7%E6%AD%8C%E3%80%91/"/>
+      <category term="【谷歌】" scheme="https://github.com/wangjinshen/tags/%E3%80%90%E8%B0%B7%E6%AD%8C%E3%80%91/"/>
     
   </entry>
   
   <entry>
     <title>node- 连接 mysql</title>
-    <link href="http://yoursite.com/2019/01/19/mysql-%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
-    <id>http://yoursite.com/2019/01/19/mysql-连接池/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/mysql-%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/mysql-连接池/</id>
     <published>2019-01-19T02:37:30.000Z</published>
     <updated>2019-01-19T03:24:24.122Z</updated>
     
@@ -133,16 +133,16 @@
     </summary>
     
     
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+      <category term="node" scheme="https://github.com/wangjinshen/tags/node/"/>
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+      <category term="mysql" scheme="https://github.com/wangjinshen/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>vue-router</title>
-    <link href="http://yoursite.com/2019/01/18/vue-route/"/>
-    <id>http://yoursite.com/2019/01/18/vue-route/</id>
+    <link href="https://github.com/wangjinshen/2019/01/18/vue-route/"/>
+    <id>https://github.com/wangjinshen/2019/01/18/vue-route/</id>
     <published>2019-01-18T01:03:28.000Z</published>
     <updated>2019-01-18T01:15:10.268Z</updated>
     
@@ -158,16 +158,16 @@
     </summary>
     
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+      <category term="vue" scheme="https://github.com/wangjinshen/tags/vue/"/>
     
-      <category term="router" scheme="http://yoursite.com/tags/router/"/>
+      <category term="router" scheme="https://github.com/wangjinshen/tags/router/"/>
     
   </entry>
   
   <entry>
     <title>action</title>
-    <link href="http://yoursite.com/2019/01/16/action/"/>
-    <id>http://yoursite.com/2019/01/16/action/</id>
+    <link href="https://github.com/wangjinshen/2019/01/16/action/"/>
+    <id>https://github.com/wangjinshen/2019/01/16/action/</id>
     <published>2019-01-16T12:57:34.000Z</published>
     <updated>2019-01-16T13:00:03.199Z</updated>
     
@@ -183,16 +183,16 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
-      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
+      <category term="redux" scheme="https://github.com/wangjinshen/tags/redux/"/>
     
   </entry>
   
   <entry>
     <title>react-component-父子通讯</title>
-    <link href="http://yoursite.com/2019/01/16/react-component-%E7%88%B6%E5%AD%90%E9%80%9A%E8%AE%AF/"/>
-    <id>http://yoursite.com/2019/01/16/react-component-父子通讯/</id>
+    <link href="https://github.com/wangjinshen/2019/01/16/react-component-%E7%88%B6%E5%AD%90%E9%80%9A%E8%AE%AF/"/>
+    <id>https://github.com/wangjinshen/2019/01/16/react-component-父子通讯/</id>
     <published>2019-01-16T10:13:12.000Z</published>
     <updated>2019-01-16T12:53:52.914Z</updated>
     
@@ -208,14 +208,14 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>react</title>
-    <link href="http://yoursite.com/2019/01/15/react/"/>
-    <id>http://yoursite.com/2019/01/15/react/</id>
+    <link href="https://github.com/wangjinshen/2019/01/15/react/"/>
+    <id>https://github.com/wangjinshen/2019/01/15/react/</id>
     <published>2019-01-15T15:37:25.000Z</published>
     <updated>2019-01-15T15:37:36.189Z</updated>
     
@@ -224,14 +224,14 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>测试  Holle world</title>
-    <link href="http://yoursite.com/2019/01/15/%E6%B5%8B%E8%AF%95-Holle-world/"/>
-    <id>http://yoursite.com/2019/01/15/测试-Holle-world/</id>
+    <link href="https://github.com/wangjinshen/2019/01/15/%E6%B5%8B%E8%AF%95-Holle-world/"/>
+    <id>https://github.com/wangjinshen/2019/01/15/测试-Holle-world/</id>
     <published>2019-01-15T11:30:49.000Z</published>
     <updated>2019-01-16T00:20:07.491Z</updated>
     
@@ -240,18 +240,18 @@
     </summary>
     
     
-      <category term="tags" scheme="http://yoursite.com/tags/tags/"/>
+      <category term="tags" scheme="https://github.com/wangjinshen/tags/tags/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/01/15/hello-world/"/>
-    <id>http://yoursite.com/2019/01/15/hello-world/</id>
+    <link href="https://github.com/wangjinshen/2019/01/15/hello-world/"/>
+    <id>https://github.com/wangjinshen/2019/01/15/hello-world/</id>
     <published>2019-01-15T11:16:02.854Z</published>
     <updated>2019-01-16T06:47:52.083Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
@@ -263,7 +263,7 @@
     </summary>
     
     
-      <category term="bolg" scheme="http://yoursite.com/tags/bolg/"/>
+      <category term="bolg" scheme="https://github.com/wangjinshen/tags/bolg/"/>
     
   </entry>
   
