@@ -22,20 +22,20 @@
     
     
     <meta name="keywords" content="react">
-    <meta name="description" content="react 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null                                                                                             null              解决的办法很简单，在 console.log(eve">
+    <meta name="description" content="react 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null 解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。1234567891011121314import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;class App">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react对象控制台输出 null 的问题">
 <meta property="og:url" content="https://github.com/wangjinshen/2019/01/20/react合成事件对象控制台输出null的问题/index.html">
 <meta property="og:site_name" content="阿王">
-<meta property="og:description" content="react 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null                                                                                             null              解决的办法很简单，在 console.log(eve">
+<meta property="og:description" content="react 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null 解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。1234567891011121314import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;class App">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://github.com/img/reactEvent.png">
 <meta property="og:image" content="https://github.com/img/reactResEvent.png">
 <meta property="og:updated_time" content="2019-01-20T12:09:02.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react对象控制台输出 null 的问题">
-<meta name="twitter:description" content="react 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null                                                                                             null              解决的办法很简单，在 console.log(eve">
+<meta name="twitter:description" content="react 中 event 对象控制台输出 null 的问题在 react 中输出 event 对象，在控制台查看是 null 解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。1234567891011121314import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;class App">
 <meta name="twitter:image" content="https://github.com/img/reactEvent.png">
     
         <link rel="alternate" type="application/atom+xml" title="阿王" href="/atom.xml">
@@ -185,21 +185,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="react-中-event-对象控制台输出-null-的问题"><a href="#react-中-event-对象控制台输出-null-的问题" class="headerlink" title="react 中 event 对象控制台输出 null 的问题"></a>react 中 event 对象控制台输出 null 的问题</h1><h2 id="在-react-中输出-event-对象，在控制台查看是-null"><a href="#在-react-中输出-event-对象，在控制台查看是-null" class="headerlink" title="在 react 中输出 event 对象，在控制台查看是 null"></a>在 react 中输出 event 对象，在控制台查看是 null</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/img/reactEvent.png" alt="null" title="">
-                </div>
-                <div class="image-caption">null</div>
-            </figure>
+            <h1 id="react-中-event-对象控制台输出-null-的问题"><a href="#react-中-event-对象控制台输出-null-的问题" class="headerlink" title="react 中 event 对象控制台输出 null 的问题"></a>react 中 event 对象控制台输出 null 的问题</h1><h2 id="在-react-中输出-event-对象，在控制台查看是-null"><a href="#在-react-中输出-event-对象，在控制台查看是-null" class="headerlink" title="在 react 中输出 event 对象，在控制台查看是 null"></a>在 react 中输出 event 对象，在控制台查看是 null</h2><p><img src="/img/reactEvent.png" alt="null"></p>
 <h2 id="解决的办法很简单，在-console-log-event-前使用-event-的-persist-方法即可。"><a href="#解决的办法很简单，在-console-log-event-前使用-event-的-persist-方法即可。" class="headerlink" title="解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。"></a>解决的办法很简单，在 console.log(event) 前使用 event 的 persist() 方法即可。</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div onClick=&#123;</span><br><span class="line">      (e)=&gt;&#123;</span><br><span class="line">        e.persist()</span><br><span class="line">        console.log(e)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;&gt;</span><br><span class="line">    点击</span><br><span class="line">    &lt;/div&gt;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/img/reactResEvent.png" alt="结果" title="">
-                </div>
-                <div class="image-caption">结果</div>
-            </figure>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="/img/reactResEvent.png" alt="结果"></p>
 
         </div>
 
