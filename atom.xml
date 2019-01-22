@@ -5,9 +5,9 @@
   <subtitle>做一个爱折腾的程序员</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://coding.net/u/qcloud379be1/p/"/>
-  <updated>2019-01-20T12:09:02.749Z</updated>
-  <id>https://coding.net/u/qcloud379be1/p/</id>
+  <link href="https://github.com/wangjinshen/"/>
+  <updated>2019-01-22T08:51:02.448Z</updated>
+  <id>https://github.com/wangjinshen/</id>
   
   <author>
     <name>王瑾深</name>
@@ -17,9 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>拖动 -position</title>
+    <link href="https://github.com/wangjinshen/2019/01/22/%E6%8B%96%E5%8A%A8-position/"/>
+    <id>https://github.com/wangjinshen/2019/01/22/拖动-position/</id>
+    <published>2019-01-22T08:15:31.000Z</published>
+    <updated>2019-01-22T08:51:02.448Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于一些拖动的小-demo"><a href="#关于一些拖动的小-demo" class="headerlink" title="关于一些拖动的小 demo"></a>关于一些拖动的小 demo</h1><h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><h3 id="先上-demo"><a href="#先上-demo" class="headerlink" title="先上 demo"></a>先上 demo</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            background: red;</span></span><br><span class="line"><span class="undefined">            position: fixed;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            top: 20px;</span></span><br><span class="line"><span class="undefined">            left: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .rightBottom,</span></span><br><span class="line"><span class="undefined">        .left &#123;</span></span><br><span class="line"><span class="undefined">            width: 20px;</span></span><br><span class="line"><span class="undefined">            height: 20px;</span></span><br><span class="line"><span class="undefined">            background: rgba(89, 98, 89, .8);</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 50%;</span></span><br><span class="line"><span class="undefined">            right: 0;</span></span><br><span class="line"><span class="undefined">            transform: translate(50%, -50%);</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .rightBottom &#123;</span></span><br><span class="line"><span class="undefined">            top: 100%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"rightBottom"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">dom</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(dom);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">".box"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            e.stopPropagation();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> X = e.offsetX,</span></span><br><span class="line"><span class="undefined">                Y = e.offsetY</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                e.target.style.left = e.pageX - X + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="javascript">                e.target.style.top = e.pageY - Y + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="string">".left"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="undefined">            e.stopPropagation();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> originX = e.pageX,</span></span><br><span class="line"><span class="javascript">                width = $(<span class="string">".box"</span>).offsetWidth;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="string">".rightBottom"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            e.stopPropagation();</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> originX = e.pageX,</span></span><br><span class="line"><span class="undefined">                originY = e.pageY,</span></span><br><span class="line"><span class="javascript">                width = $(<span class="string">".box"</span>).offsetWidth,</span></span><br><span class="line"><span class="javascript">                height = $(<span class="string">".box"</span>).offsetHeight;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">".box"</span>).style.height = height + e.pageY - originY + <span class="string">"px"</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="通过事件拿到位置信息的-API"><a href="#通过事件拿到位置信息的-API" class="headerlink" title="通过事件拿到位置信息的 API"></a>通过事件拿到位置信息的 API</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">    <span class="comment">//clientX: 128</span></span><br><span class="line">    <span class="comment">//clientY: 87</span></span><br><span class="line">    <span class="comment">//点击的点相对view视口原点的距离</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// offsetX: 108</span></span><br><span class="line">   <span class="comment">// offsetY: 67</span></span><br><span class="line">   <span class="comment">//点击的点相对自身原点的距离</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// pageX: 128</span></span><br><span class="line">   <span class="comment">// pageY: 87</span></span><br><span class="line">   <span class="comment">//点击的点相对document原点的距离</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// screenX: 348</span></span><br><span class="line">   <span class="comment">// screenY: 400</span></span><br><span class="line">   <span class="comment">//点击的点相对屏幕原点的距离</span></span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><h2 id="拖动-dom"><a href="#拖动-dom" class="headerlink" title="拖动 dom"></a>拖动 dom</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(e)</span><br><span class="line">           e.stopPropagation();</span><br><span class="line">           <span class="keyword">let</span> X = e.offsetX,</span><br><span class="line">               Y = e.offsetY</span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">               e.target.style.left = e.pageX - X + <span class="string">"px"</span>;</span><br><span class="line">               e.target.style.top = e.pageY - Y + <span class="string">"px"</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><h2 id="通过拖动改变-dom-宽度"><a href="#通过拖动改变-dom-宽度" class="headerlink" title="通过拖动改变 dom 宽度"></a>通过拖动改变 dom 宽度</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".left"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">       e.preventDefault();</span><br><span class="line">       e.stopPropagation();</span><br><span class="line">       <span class="keyword">let</span> originX = e.pageX,</span><br><span class="line">           width = $(<span class="string">".box"</span>).offsetWidth;</span><br><span class="line">       <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">           $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><h2 id="通过拖动改变-dom-宽度和高度"><a href="#通过拖动改变-dom-宽度和高度" class="headerlink" title="通过拖动改变 dom 宽度和高度"></a>通过拖动改变 dom 宽度和高度</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".rightBottom"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">           <span class="comment">//阻止冒泡</span></span><br><span class="line">           e.stopPropagation();</span><br><span class="line">           <span class="comment">//取消默认事件</span></span><br><span class="line">           e.preventDefault();</span><br><span class="line">           <span class="comment">//按下时获取到当前点击的原点</span></span><br><span class="line">           <span class="keyword">let</span> originX = e.pageX,</span><br><span class="line">               originY = e.pageY,</span><br><span class="line">               <span class="comment">//按下时获取到当前元素的宽度和高度</span></span><br><span class="line">               width = $(<span class="string">".box"</span>).offsetWidth,</span><br><span class="line">               height = $(<span class="string">".box"</span>).offsetHeight;</span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">               <span class="comment">//e.pageX - originX</span></span><br><span class="line">               <span class="comment">// 移动时鼠标的距离原点的距离减去按下时原点的距离==要加的宽度或要减得宽度</span></span><br><span class="line">               $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span>;</span><br><span class="line">               $(<span class="string">".box"</span>).style.height = height + e.pageY - originY + <span class="string">"px"</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="comment">//抬起取消移动事件</span></span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><h2 id="元素距离的一些获取方式"><a href="#元素距离的一些获取方式" class="headerlink" title="元素距离的一些获取方式"></a>元素距离的一些获取方式</h2><ul><li>$(“.box”).clientWidth;</li><li>$(“.box”).clientHeight;</li><li>$(“.box”).offsetWidth   （包含边线的宽）</li><li>$(“.box”).offsetHeight （包含边线的高）;</li><li>$(“.box”).offsetLeft (dom元素距离定位元素的left父元素没有定位层层向上直到document)</li><li><p>$(“.box”).offsetTop (dom元素距离定位元素的Top父元素没有定位层层向上直到document)</p></li><li><p>$(“.box”)正文全文宽：  $(“.box”).scrollWidth;（含滚动条时，即滚动条从最顶端滚到最底端实际走过的距离）</p></li><li>$(“.box”)正文全文高：  $(“.box”).scrollHeight;（含滚动条时，即滚动条从最顶端滚到最底端实际走过的距离）</li><li>$(“.box”)被卷去的高：  $(“.box”).scrollTop;</li><li>$(“.box”)被卷去的左：  $(“.box”).scrollLeft;</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;关于一些拖动的小-demo&quot;&gt;&lt;a href=&quot;#关于一些拖动的小-demo&quot; class=&quot;headerlink&quot; title=&quot;关于一些拖动的小 demo&quot;&gt;&lt;/a&gt;关于一些拖动的小 demo&lt;/h1&gt;&lt;h2 id=&quot;demo&quot;&gt;&lt;a href=&quot;#demo&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="dom" scheme="https://github.com/wangjinshen/tags/dom/"/>
+    
+      <category term="position" scheme="https://github.com/wangjinshen/tags/position/"/>
+    
+  </entry>
+  
+  <entry>
     <title>react对象控制台输出 null 的问题</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/20/react%E5%90%88%E6%88%90%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BAnull%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/20/react合成事件对象控制台输出null的问题/</id>
+    <link href="https://github.com/wangjinshen/2019/01/20/react%E5%90%88%E6%88%90%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BAnull%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://github.com/wangjinshen/2019/01/20/react合成事件对象控制台输出null的问题/</id>
     <published>2019-01-20T11:24:35.000Z</published>
     <updated>2019-01-20T12:09:02.749Z</updated>
     
@@ -35,14 +60,14 @@
     </summary>
     
     
-      <category term="react" scheme="https://coding.net/u/qcloud379be1/p/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>redux-persist- 数据持久化</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/19/redux-persist-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/19/redux-persist-数据持久化/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/redux-persist-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/redux-persist-数据持久化/</id>
     <published>2019-01-19T12:36:42.000Z</published>
     <updated>2019-01-19T13:03:42.611Z</updated>
     
@@ -58,16 +83,16 @@
     </summary>
     
     
-      <category term="react" scheme="https://coding.net/u/qcloud379be1/p/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
-      <category term="redux" scheme="https://coding.net/u/qcloud379be1/p/tags/redux/"/>
+      <category term="redux" scheme="https://github.com/wangjinshen/tags/redux/"/>
     
   </entry>
   
   <entry>
     <title>node-fetch 跨域</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/19/node-fetch%E8%B7%A8%E5%9F%9F/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/19/node-fetch跨域/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/node-fetch%E8%B7%A8%E5%9F%9F/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/node-fetch跨域/</id>
     <published>2019-01-19T11:46:48.000Z</published>
     <updated>2019-01-19T12:05:14.117Z</updated>
     
@@ -83,41 +108,41 @@
     </summary>
     
     
-      <category term="node" scheme="https://coding.net/u/qcloud379be1/p/tags/node/"/>
+      <category term="node" scheme="https://github.com/wangjinshen/tags/node/"/>
     
-      <category term="跨域" scheme="https://coding.net/u/qcloud379be1/p/tags/%E8%B7%A8%E5%9F%9F/"/>
+      <category term="跨域" scheme="https://github.com/wangjinshen/tags/%E8%B7%A8%E5%9F%9F/"/>
     
-      <category term="node-fetch" scheme="https://coding.net/u/qcloud379be1/p/tags/node-fetch/"/>
+      <category term="node-fetch" scheme="https://github.com/wangjinshen/tags/node-fetch/"/>
     
   </entry>
   
   <entry>
     <title>谷歌</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/19/%E8%B0%B7%E6%AD%8C/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/19/谷歌/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/%E8%B0%B7%E6%AD%8C/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/谷歌/</id>
     <published>2019-01-19T05:41:19.000Z</published>
     <updated>2019-01-19T05:43:40.029Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="学习地址"><a href="#学习地址" class="headerlink" title="学习地址"></a>学习地址</h1><p><a href="https://github.com/bannedbook" target="_blank" rel="noopener">https://github.com/bannedbook</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="学习地址"><a href="#学习地址" class="headerlink" title="学习地址"></a>学习地址</h1><p><a href="https://github.com/bannedbook">https://github.com/bannedbook</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;学习地址&quot;&gt;&lt;a href=&quot;#学习地址&quot; class=&quot;headerlink&quot; title=&quot;学习地址&quot;&gt;&lt;/a&gt;学习地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/bannedbook&quot; target=&quot;_blank&quot; rel=&quot;n
+        &lt;h1 id=&quot;学习地址&quot;&gt;&lt;a href=&quot;#学习地址&quot; class=&quot;headerlink&quot; title=&quot;学习地址&quot;&gt;&lt;/a&gt;学习地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/bannedbook&quot;&gt;https://github.com/ban
       
     
     </summary>
     
     
-      <category term="【谷歌】" scheme="https://coding.net/u/qcloud379be1/p/tags/%E3%80%90%E8%B0%B7%E6%AD%8C%E3%80%91/"/>
+      <category term="【谷歌】" scheme="https://github.com/wangjinshen/tags/%E3%80%90%E8%B0%B7%E6%AD%8C%E3%80%91/"/>
     
   </entry>
   
   <entry>
     <title>node- 连接 mysql</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/19/mysql-%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/19/mysql-连接池/</id>
+    <link href="https://github.com/wangjinshen/2019/01/19/mysql-%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
+    <id>https://github.com/wangjinshen/2019/01/19/mysql-连接池/</id>
     <published>2019-01-19T02:37:30.000Z</published>
     <updated>2019-01-19T03:24:24.122Z</updated>
     
@@ -133,16 +158,16 @@
     </summary>
     
     
-      <category term="node" scheme="https://coding.net/u/qcloud379be1/p/tags/node/"/>
+      <category term="node" scheme="https://github.com/wangjinshen/tags/node/"/>
     
-      <category term="mysql" scheme="https://coding.net/u/qcloud379be1/p/tags/mysql/"/>
+      <category term="mysql" scheme="https://github.com/wangjinshen/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>vue-router</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/18/vue-route/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/18/vue-route/</id>
+    <link href="https://github.com/wangjinshen/2019/01/18/vue-route/"/>
+    <id>https://github.com/wangjinshen/2019/01/18/vue-route/</id>
     <published>2019-01-18T01:03:28.000Z</published>
     <updated>2019-01-18T01:15:10.268Z</updated>
     
@@ -158,16 +183,16 @@
     </summary>
     
     
-      <category term="vue" scheme="https://coding.net/u/qcloud379be1/p/tags/vue/"/>
+      <category term="vue" scheme="https://github.com/wangjinshen/tags/vue/"/>
     
-      <category term="router" scheme="https://coding.net/u/qcloud379be1/p/tags/router/"/>
+      <category term="router" scheme="https://github.com/wangjinshen/tags/router/"/>
     
   </entry>
   
   <entry>
     <title>action</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/16/action/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/16/action/</id>
+    <link href="https://github.com/wangjinshen/2019/01/16/action/"/>
+    <id>https://github.com/wangjinshen/2019/01/16/action/</id>
     <published>2019-01-16T12:57:34.000Z</published>
     <updated>2019-01-16T13:00:03.199Z</updated>
     
@@ -183,16 +208,16 @@
     </summary>
     
     
-      <category term="react" scheme="https://coding.net/u/qcloud379be1/p/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
-      <category term="redux" scheme="https://coding.net/u/qcloud379be1/p/tags/redux/"/>
+      <category term="redux" scheme="https://github.com/wangjinshen/tags/redux/"/>
     
   </entry>
   
   <entry>
     <title>react-component-父子通讯</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/16/react-component-%E7%88%B6%E5%AD%90%E9%80%9A%E8%AE%AF/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/16/react-component-父子通讯/</id>
+    <link href="https://github.com/wangjinshen/2019/01/16/react-component-%E7%88%B6%E5%AD%90%E9%80%9A%E8%AE%AF/"/>
+    <id>https://github.com/wangjinshen/2019/01/16/react-component-父子通讯/</id>
     <published>2019-01-16T10:13:12.000Z</published>
     <updated>2019-01-16T12:53:52.914Z</updated>
     
@@ -208,14 +233,14 @@
     </summary>
     
     
-      <category term="react" scheme="https://coding.net/u/qcloud379be1/p/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>react</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/15/react/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/15/react/</id>
+    <link href="https://github.com/wangjinshen/2019/01/15/react/"/>
+    <id>https://github.com/wangjinshen/2019/01/15/react/</id>
     <published>2019-01-15T15:37:25.000Z</published>
     <updated>2019-01-15T15:37:36.189Z</updated>
     
@@ -224,14 +249,14 @@
     </summary>
     
     
-      <category term="react" scheme="https://coding.net/u/qcloud379be1/p/tags/react/"/>
+      <category term="react" scheme="https://github.com/wangjinshen/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>测试  Holle world</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/15/%E6%B5%8B%E8%AF%95-Holle-world/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/15/测试-Holle-world/</id>
+    <link href="https://github.com/wangjinshen/2019/01/15/%E6%B5%8B%E8%AF%95-Holle-world/"/>
+    <id>https://github.com/wangjinshen/2019/01/15/测试-Holle-world/</id>
     <published>2019-01-15T11:30:49.000Z</published>
     <updated>2019-01-16T00:20:07.491Z</updated>
     
@@ -240,18 +265,18 @@
     </summary>
     
     
-      <category term="tags" scheme="https://coding.net/u/qcloud379be1/p/tags/tags/"/>
+      <category term="tags" scheme="https://github.com/wangjinshen/tags/tags/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://coding.net/u/qcloud379be1/p/2019/01/15/hello-world/"/>
-    <id>https://coding.net/u/qcloud379be1/p/2019/01/15/hello-world/</id>
+    <link href="https://github.com/wangjinshen/2019/01/15/hello-world/"/>
+    <id>https://github.com/wangjinshen/2019/01/15/hello-world/</id>
     <published>2019-01-15T11:16:02.854Z</published>
     <updated>2019-01-16T06:47:52.083Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
@@ -263,7 +288,7 @@
     </summary>
     
     
-      <category term="bolg" scheme="https://coding.net/u/qcloud379be1/p/tags/bolg/"/>
+      <category term="bolg" scheme="https://github.com/wangjinshen/tags/bolg/"/>
     
   </entry>
   
