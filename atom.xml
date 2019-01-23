@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/wangjinshen/"/>
-  <updated>2019-01-22T11:40:26.467Z</updated>
+  <updated>2019-01-23T03:51:29.539Z</updated>
   <id>https://github.com/wangjinshen/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>优质博文</title>
+    <link href="https://github.com/wangjinshen/2019/01/23/%E4%BC%98%E8%B4%A8%E5%8D%9A%E6%96%87/"/>
+    <id>https://github.com/wangjinshen/2019/01/23/优质博文/</id>
+    <published>2019-01-23T03:49:48.000Z</published>
+    <updated>2019-01-23T03:51:29.539Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="优质博文"><a href="#优质博文" class="headerlink" title="优质博文"></a>优质博文</h1><ul><li>Node.js安装及环境配置之Windows篇:<a href="https://www.cnblogs.com/zhouyu2017/p/6485265.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhouyu2017/p/6485265.html</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;优质博文&quot;&gt;&lt;a href=&quot;#优质博文&quot; class=&quot;headerlink&quot; title=&quot;优质博文&quot;&gt;&lt;/a&gt;优质博文&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Node.js安装及环境配置之Windows篇:&lt;a href=&quot;https://www.cnblogs.com
+      
+    
+    </summary>
+    
+    
+      <category term="学习" scheme="https://github.com/wangjinshen/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="工具" scheme="https://github.com/wangjinshen/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>杂项</title>
+    <link href="https://github.com/wangjinshen/2019/01/23/%E6%9D%82%E9%A1%B9/"/>
+    <id>https://github.com/wangjinshen/2019/01/23/杂项/</id>
+    <published>2019-01-23T01:36:30.000Z</published>
+    <updated>2019-01-23T03:44:07.938Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="VMware-虚拟机"><a href="#VMware-虚拟机" class="headerlink" title="VMware  虚拟机"></a>VMware  虚拟机</h1><h1 id="bios"><a href="#bios" class="headerlink" title="bios"></a>bios</h1><p>计算机领域，BIOS 是 “Basic Input Output System”的缩略语，译为”基本输入输出系统”， [1]  与前者读法相同。计算机在运行时，首先会进入 BIOS，它在计算机系统中起着非常重要的作用。一块主板性能优越与否，很大程度上取决于主板上的 BIOS 管理功能是否先进。</p><h1 id="常用-cmd-命令"><a href="#常用-cmd-命令" class="headerlink" title="常用 cmd 命令"></a>常用 cmd 命令</h1><h2 id="mstsc-链接远程桌面"><a href="#mstsc-链接远程桌面" class="headerlink" title="mstsc 链接远程桌面"></a>mstsc 链接远程桌面</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;VMware-虚拟机&quot;&gt;&lt;a href=&quot;#VMware-虚拟机&quot; class=&quot;headerlink&quot; title=&quot;VMware  虚拟机&quot;&gt;&lt;/a&gt;VMware  虚拟机&lt;/h1&gt;&lt;h1 id=&quot;bios&quot;&gt;&lt;a href=&quot;#bios&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>seo工具</title>
