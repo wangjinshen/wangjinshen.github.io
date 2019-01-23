@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/wangjinshen/"/>
-  <updated>2019-01-23T06:38:18.946Z</updated>
+  <updated>2019-01-23T12:22:51.614Z</updated>
   <id>https://github.com/wangjinshen/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 安装</title>
+    <link href="https://github.com/wangjinshen/2019/01/23/vue%E5%AE%89%E8%A3%85/"/>
+    <id>https://github.com/wangjinshen/2019/01/23/vue安装/</id>
+    <published>2019-01-23T12:05:15.000Z</published>
+    <updated>2019-01-23T12:22:51.614Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vue-安装"><a href="#vue-安装" class="headerlink" title="vue 安装"></a>vue 安装</h1><h2 id="安装全局-vue-和-vue-cli"><a href="#安装全局-vue-和-vue-cli" class="headerlink" title="安装全局 vue 和 vue-cli"></a>安装全局 vue 和 vue-cli</h2> <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install vue</span><br><span class="line">cnpm install --global vue-cli</span><br></pre></td></tr></table></figure><h2 id="命令行工具"><a href="#命令行工具" class="headerlink" title="命令行工具"></a>命令行工具</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> 全局安装 vue-cli</span><br><span class="line">$ cnpm install --global vue-cli</span><br><span class="line"> 创建一个基于 webpack 模板的新项目</span><br><span class="line">$ vue init webpack my-project</span><br><span class="line"> 这里需要进行一些配置，默认回车即可</span><br><span class="line">This will install Vue 2.x version of the template.</span><br><span class="line"></span><br><span class="line">For Vue 1.x use: vue init webpack#1.0 my-project</span><br><span class="line"></span><br><span class="line">? Project name my-project</span><br><span class="line">? Project description A Vue.js project</span><br><span class="line">? Author runoob &lt;test@runoob.com&gt;</span><br><span class="line">? Vue build standalone</span><br><span class="line">? Use ESLint to lint your code? Yes</span><br><span class="line">? Pick an ESLint preset Standard</span><br><span class="line">? Setup unit tests with Karma + Mocha? Yes</span><br><span class="line">? Setup e2e tests with Nightwatch? Yes</span><br><span class="line"></span><br><span class="line">   vue-cli · Generated "my-project".</span><br><span class="line"></span><br><span class="line">   To get started:</span><br><span class="line"></span><br><span class="line"><span class="code">     cd my-project</span></span><br><span class="line"><span class="code">     npm install</span></span><br><span class="line"><span class="code">     npm run dev</span></span><br><span class="line"></span><br><span class="line">   Documentation can be found at https://vuejs-templates.github.io/webpack</span><br></pre></td></tr></table></figure><h2 id="进入项目，安装并运行："><a href="#进入项目，安装并运行：" class="headerlink" title="进入项目，安装并运行："></a>进入项目，安装并运行：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd my-project</span><br><span class="line">$ cnpm install</span><br><span class="line">$ cnpm run dev</span><br><span class="line"> DONE  Compiled successfully in 4388ms</span><br><span class="line"></span><br><span class="line">&gt; Listening at http://localhost:8080</span><br></pre></td></tr></table></figure><p>成功执行以上命令后访问 <a href="http://localhost:8080/，输出结果如下所示：" target="_blank" rel="noopener">http://localhost:8080/，输出结果如下所示：</a><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="img/TIM截图20190123202023.png" alt="如图" title="">                </div>                <div class="image-caption">如图</div>            </figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;vue-安装&quot;&gt;&lt;a href=&quot;#vue-安装&quot; class=&quot;headerlink&quot; title=&quot;vue 安装&quot;&gt;&lt;/a&gt;vue 安装&lt;/h1&gt;&lt;h2 id=&quot;安装全局-vue-和-vue-cli&quot;&gt;&lt;a href=&quot;#安装全局-vue-和-vue-cli&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://github.com/wangjinshen/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>优质博文</title>
