@@ -83,9 +83,9 @@
     </summary>
     
     
-      <category term="vue" scheme="https://github.com/wangjinshen/tags/vue/"/>
-    
       <category term="ts" scheme="https://github.com/wangjinshen/tags/ts/"/>
+    
+      <category term="vue" scheme="https://github.com/wangjinshen/tags/vue/"/>
     
   </entry>
   
@@ -154,9 +154,9 @@
     </summary>
     
     
-      <category term="vuex" scheme="https://github.com/wangjinshen/tags/vuex/"/>
-    
       <category term="vue" scheme="https://github.com/wangjinshen/tags/vue/"/>
+    
+      <category term="vuex" scheme="https://github.com/wangjinshen/tags/vuex/"/>
     
   </entry>
   
