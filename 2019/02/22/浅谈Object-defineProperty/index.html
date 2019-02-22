@@ -26,19 +26,19 @@
 <meta name="keywords" content="js,defineProperty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈Object.defineProperty">
-<meta property="og:url" content="git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/index.html">
+<meta property="og:url" content="https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/index.html">
 <meta property="og:site_name" content="王瑾深">
 <meta property="og:description" content="浅谈Object.defineProperty 简单实现一个数据双向绑定参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-22T13:17:12.336Z">
+<meta property="og:updated_time" content="2019-02-22T13:31:31.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Object.defineProperty">
 <meta name="twitter:description" content="浅谈Object.defineProperty 简单实现一个数据双向绑定参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性">
     
-        <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/blog/atom.xml">
     
-    <link rel="shortcut icon" href="/img/favicon-20190115095607402.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link rel="shortcut icon" href="/blog/img/favicon-20190115095607402.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -54,10 +54,10 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
       <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.png">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.png">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">王瑾深</h5>
@@ -69,21 +69,21 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/blog/">
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/blog/archives">
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/blog/tags">
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
@@ -193,20 +193,17 @@
 <li>writable：表示能否修改属性的值</li>
 <li>Value：包含这个属性的数据值</li>
 <li>get：读取属性值执行的内置函数</li>
-<li>set：更改属性值执行的内置函数更改后的<code>参数</code>会在形参中<h2 id="Configurable"><a href="#Configurable" class="headerlink" title="Configurable"></a>Configurable</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line">       <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">           configurable:<span class="literal">true</span></span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<li>set：更改属性值执行的内置函数更改后的<code>参数</code>会在形参中<h2 id="Configurable"><a href="#Configurable" class="headerlink" title="Configurable"></a>Configurable</h2></li>
 </ul>
-<p>//图片</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line">       <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">           configurable:<span class="literal">false</span></span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
-<p>//图片</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"><span class="comment">//第一种情况：configurable设置为false，不能再次修改特性。</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">false</span>,</span><br><span class="line">    configurable:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//重新修改特性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">true</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log( obj.newKey ); <span class="comment">//报错：Uncaught TypeError: Cannot redefine property: newKey</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种情况：configurable设置为true，可以再次修改特性。</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">false</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//重新修改特性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">true</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log( obj.newKey ); <span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line">       <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">           configurable:<span class="literal">true</span></span><br><span class="line">       &#125;)</span><br><span class="line">       <span class="keyword">delete</span> obj.a</span><br><span class="line">       <span class="built_in">console</span>.log(obj)<span class="comment">//&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line">       <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">           configurable:<span class="literal">false</span></span><br><span class="line">       &#125;)  </span><br><span class="line">        <span class="keyword">delete</span> obj.a</span><br><span class="line">       <span class="built_in">console</span>.log(obj)<span class="comment">//&#123;a:1&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"><span class="comment">//第一种情况：configurable设置为false，不能再次修改特性。</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">false</span>,</span><br><span class="line">    configurable:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//重新修改特性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">true</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log( obj.a ); <span class="comment">//报错：Uncaught TypeError: Cannot redefine property: a</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种情况：configurable设置为true，可以再次修改特性。</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">false</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//重新修改特性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">true</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log( obj.a ); <span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
 <h2 id="Enumerable"><a href="#Enumerable" class="headerlink" title="Enumerable"></a>Enumerable</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">            enumerable:<span class="literal">true</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">            <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">                <span class="keyword">const</span> element = obj[key];</span><br><span class="line">                <span class="built_in">console</span>.log(key) <span class="comment">// a b</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">            enumerable:<span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">            <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">                <span class="keyword">const</span> element = obj[key];</span><br><span class="line">                <span class="built_in">console</span>.log(key) <span class="comment">// b</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">            writable:<span class="literal">false</span></span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-<p>//图</p>
-<h2 id="存取器描述"><a href="#存取器描述" class="headerlink" title="存取器描述"></a>存取器描述</h2><p>当使用存取器描述属性的特性的时候，允许设置以下特性属性：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125; | <span class="literal">undefined</span>,</span><br><span class="line">    set:<span class="function"><span class="keyword">function</span> (<span class="params">value</span>)</span>&#123;&#125; | <span class="literal">undefined</span></span><br><span class="line">    configurable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">    enumerable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">            writable:<span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">      obj.a=<span class="number">3</span></span><br><span class="line">      <span class="built_in">console</span>.log(obj)<span class="comment">//&#123;a:1&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="存取器描述"><a href="#存取器描述" class="headerlink" title="存取器描述"></a>存取器描述</h2><p>当使用存取器描述属性的特性的时候，允许设置以下特性属性：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125; | <span class="literal">undefined</span>,</span><br><span class="line">    set:<span class="function"><span class="keyword">function</span> (<span class="params">value</span>)</span>&#123;&#125; | <span class="literal">undefined</span></span><br><span class="line">    configurable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">    enumerable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>注意：当使用了getter或setter方法，不允许使用writable和value这两个属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> initValue = <span class="string">'hello'</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//当获取值的时候触发的函数</span></span><br><span class="line">        <span class="keyword">return</span> initValue;    </span><br><span class="line">    &#125;,</span><br><span class="line">    set:<span class="function"><span class="keyword">function</span> (<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//当设置值的时候触发的函数,设置的新值通过参数value拿到</span></span><br><span class="line">        initValue = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//获取值</span></span><br><span class="line"><span class="built_in">console</span>.log( obj.newKey );  <span class="comment">//hello</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置值</span></span><br><span class="line">obj.newKey = <span class="string">'change value'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj.newKey ); <span class="comment">//change value</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> initValue = <span class="string">'hello'</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">"a"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//当获取值的时候触发的函数</span></span><br><span class="line">        <span class="keyword">return</span> initValue;    </span><br><span class="line">    &#125;,</span><br><span class="line">    set:<span class="function"><span class="keyword">function</span> (<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//当设置值的时候触发的函数,设置的新值通过参数value拿到</span></span><br><span class="line">        initValue = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//获取值</span></span><br><span class="line"><span class="built_in">console</span>.log( obj.a );  <span class="comment">//hello</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置值</span></span><br><span class="line">obj.a = <span class="string">'change value'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj.a ); <span class="comment">//change value</span></span><br></pre></td></tr></table></figure>
 <p>注意：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined</p>
 <p>参考：<a href="https://segmentfault.com/a/1190000007434923" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007434923</a></p>
 
@@ -217,7 +214,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-02-22T13:17:12.336Z" itemprop="dateUpdated">2019-02-22 21:17:12</time>
+    Last updated: <time datetime="2019-02-22T13:31:31.094Z" itemprop="dateUpdated">2019-02-22 21:31:31</time>
 </span><br>
 
 
@@ -227,8 +224,8 @@
     </div>
     
     <footer>
-        <a href="git@github.com:wangjinshen/wangjinshen.github.io.git">
-            <img src="/img/avatar.png" alt="王瑾深">
+        <a href="https://coding.net/u/wangjinshena/p/blog/git">
+            <img src="/blog/img/avatar.png" alt="王瑾深">
             王瑾深
         </a>
     </footer>
@@ -239,7 +236,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/defineProperty/">defineProperty</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/defineProperty/">defineProperty</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
 
 
             
@@ -249,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&pic=https://coding.net/u/wangjinshena/p/blog/git/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -259,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈Object.defineProperty》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈Object.defineProperty》 — 王瑾深&url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/&via=https://coding.net/u/wangjinshena/p/blog/git" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -299,7 +296,7 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/02/14/vue组件递归实现左侧菜单导航树/" id="post-next" class="post-nav-link">
+      <a href="/blog/2019/02/14/vue组件递归实现左侧菜单导航树/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">vue组件递归实现左侧菜单导航树</h4>
       </a>
@@ -348,7 +345,7 @@
 
         <p>
             
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
             <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
@@ -372,7 +369,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&pic=https://coding.net/u/wangjinshena/p/blog/git/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -382,22 +379,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/&title=《浅谈Object.defineProperty》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈Object.defineProperty》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈Object.defineProperty》 — 王瑾深&url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/&via=https://coding.net/u/wangjinshena/p/blog/git" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -408,7 +405,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://coding.net/u/wangjinshena/p/blog/git/2019/02/22/浅谈Object-defineProperty/" alt="微信分享二维码">
 </div>
 
 
@@ -416,12 +413,12 @@
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.7.2"></script>
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -441,7 +438,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.7.2" async></script>
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
 
 
 
