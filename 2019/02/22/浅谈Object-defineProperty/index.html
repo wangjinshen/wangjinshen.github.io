@@ -22,18 +22,18 @@
     
     
     <meta name="keywords" content="js,defineProperty">
-    <meta name="description" content="浅谈Object.defineProperty 简单实现一个数据双向绑定参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性">
+    <meta name="description" content="浅谈Object.defineProperty参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性的值 Value：包含这个">
 <meta name="keywords" content="js,defineProperty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈Object.defineProperty">
 <meta property="og:url" content="git@github.com:wangjinshen/wangjinshen.github.io.git/2019/02/22/浅谈Object-defineProperty/index.html">
 <meta property="og:site_name" content="王瑾深">
-<meta property="og:description" content="浅谈Object.defineProperty 简单实现一个数据双向绑定参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性">
+<meta property="og:description" content="浅谈Object.defineProperty参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性的值 Value：包含这个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-22T13:31:31.094Z">
+<meta property="og:updated_time" content="2019-02-22T14:35:23.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Object.defineProperty">
-<meta name="twitter:description" content="浅谈Object.defineProperty 简单实现一个数据双向绑定参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性">
+<meta name="twitter:description" content="浅谈Object.defineProperty参数 obj：必需。目标对象  prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性  descriptor中的参数 Configurable:表示能否通过delete删除属性从而重新定义属性； Enumerable：表示能否通过for-in循环返回属性 writable：表示能否修改属性的值 Value：包含这个">
     
         <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/atom.xml">
     
@@ -159,7 +159,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#浅谈Object-defineProperty-简单实现一个数据双向绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">浅谈Object.defineProperty 简单实现一个数据双向绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#descriptor中的参数"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">descriptor中的参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Configurable"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Configurable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Enumerable"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Enumerable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#writable"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">writable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存取器描述"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">存取器描述</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#浅谈Object-defineProperty"><span class="post-toc-number">1.</span> <span class="post-toc-text">浅谈Object.defineProperty</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#descriptor中的参数"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">descriptor中的参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Configurable"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Configurable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Enumerable"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Enumerable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#writable"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">writable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存取器描述"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">存取器描述</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -182,7 +182,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="浅谈Object-defineProperty-简单实现一个数据双向绑定"><a href="#浅谈Object-defineProperty-简单实现一个数据双向绑定" class="headerlink" title="浅谈Object.defineProperty 简单实现一个数据双向绑定"></a>浅谈Object.defineProperty 简单实现一个数据双向绑定</h1><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
+            <h1 id="浅谈Object-defineProperty"><a href="#浅谈Object-defineProperty" class="headerlink" title="浅谈Object.defineProperty"></a>浅谈Object.defineProperty</h1><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
 <li>obj：必需。目标对象 </li>
 <li>prop：必需。需定义或修改的属性的名字</li>
 <li>descriptor：必需。目标属性所拥有的特性</li>
@@ -214,7 +214,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-02-22T13:31:31.094Z" itemprop="dateUpdated">2019-02-22 21:31:31</time>
+    Last updated: <time datetime="2019-02-22T14:35:23.435Z" itemprop="dateUpdated">2019-02-22 22:35:23</time>
 </span><br>
 
 
