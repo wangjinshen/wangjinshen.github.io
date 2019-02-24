@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>如何监听一个对象的变化 | 王瑾深 | 做一个爱折腾的程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="theme-color" content="#03A9F4">
+    
+    
+    <meta name="keywords" content="vue,学习">
+    <meta name="description" content="如何监听一个对象的变化12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;">
+<meta name="keywords" content="vue,学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何监听一个对象的变化">
+<meta property="og:url" content="https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/index.html">
+<meta property="og:site_name" content="王瑾深">
+<meta property="og:description" content="如何监听一个对象的变化12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-24T11:26:44.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何监听一个对象的变化">
+<meta name="twitter:description" content="如何监听一个对象的变化12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;">
+    
+        <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon-20190115095607402.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">王瑾深</h5>
+          <a href="mailto:807253330@qq.com" title="807253330@qq.com" class="mail">807253330@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangjinshen" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">如何监听一个对象的变化</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">如何监听一个对象的变化</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-24T11:25:04.000Z" itemprop="datePublished" class="page-time">
+  2019-02-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何监听一个对象的变化"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何监听一个对象的变化</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-如何监听一个对象的变化" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">如何监听一个对象的变化</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-24 19:25:04" datetime="2019-02-24T11:25:04.000Z" itemprop="datePublished">2019-02-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="如何监听一个对象的变化"><a href="#如何监听一个对象的变化" class="headerlink" title="如何监听一个对象的变化"></a>如何监听一个对象的变化</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> data = &#123;</span></span><br><span class="line"><span class="undefined">            user: &#123;</span></span><br><span class="line"><span class="javascript">                name: <span class="string">"liangshaofeng"</span>,</span></span><br><span class="line"><span class="javascript">                age: <span class="string">"24"</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            address: &#123;</span></span><br><span class="line"><span class="javascript">                city: <span class="string">"beijing"</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="javascript">        <span class="class"><span class="keyword">class</span> <span class="title">Observer</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">constructor</span>(props) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.data = props</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.walk(data)</span></span><br><span class="line"><span class="javascript">                <span class="comment">// return data</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="javascript">            <span class="comment">//递归</span></span></span><br><span class="line"><span class="undefined">            walk(obj) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> val;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> obj) &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                        val = obj[key]</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span> (<span class="built_in">String</span>.prototype.slice.call(val) == <span class="string">"[object Object]"</span>) &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                            <span class="keyword">this</span>.walk(val)</span></span><br><span class="line"><span class="undefined">                            </span></span><br><span class="line"><span class="undefined">                        &#125;</span></span><br><span class="line"><span class="undefined">                        </span></span><br><span class="line"><span class="javascript">                        <span class="keyword">this</span>.convert(key, val)</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            convert(key, val) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">Object</span>.defineProperty(<span class="keyword">this</span>.data, key, &#123;</span></span><br><span class="line"><span class="javascript">                    enumerable: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                    configurable: <span class="literal">true</span>,</span></span><br><span class="line"><span class="undefined">                    get() &#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">'你访问了'</span> + key)</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> val</span></span><br><span class="line"><span class="undefined">                    &#125;,</span></span><br><span class="line"><span class="undefined">                    set(newVal) &#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">"你改变了"</span> + key)</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">"你改变了新值"</span> + newVal)</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">if</span> (newVal === val) <span class="keyword">return</span>;</span></span><br><span class="line"><span class="undefined">                        val = newVal</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="undefined">                &#125;)</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="javascript">       <span class="keyword">new</span> Observer(data)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(data)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>参考地址：<a href="https://github.com/youngwind/blog/issues/84" target="_blank" rel="noopener">https://github.com/youngwind/blog/issues/84</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-02-24T11:26:44.258Z" itemprop="dateUpdated">2019-02-24 19:26:44</time>
+</span><br>
+
+
+        
+        falsed
+        
+    </div>
+    
+    <footer>
+        <a href="https://coding.net/u/wangjinshena/p/blog/git">
+            <img src="/blog/img/avatar.png" alt="王瑾深">
+            王瑾深
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/学习/">学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/&title=《如何监听一个对象的变化》 — 王瑾深&pic=https://coding.net/u/wangjinshena/p/blog/git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/&title=《如何监听一个对象的变化》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何监听一个对象的变化》 — 王瑾深&url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/&via=https://coding.net/u/wangjinshena/p/blog/git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/02/22/浅谈Object-defineProperty/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">浅谈Object.defineProperty</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>王瑾深 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/&title=《如何监听一个对象的变化》 — 王瑾深&pic=https://coding.net/u/wangjinshena/p/blog/git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/&title=《如何监听一个对象的变化》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何监听一个对象的变化》 — 王瑾深&url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/&via=https://coding.net/u/wangjinshena/p/blog/git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://coding.net/u/wangjinshena/p/blog/git/2019/02/24/如何监听一个对象的变化/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+</body>
+</html>
