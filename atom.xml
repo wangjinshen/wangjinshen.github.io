@@ -133,9 +133,9 @@
     </summary>
     
     
-      <category term="vue" scheme="git@github.com:wangjinshen/wangjinshen.github.io.git/tags/vue/"/>
-    
       <category term="ts" scheme="git@github.com:wangjinshen/wangjinshen.github.io.git/tags/ts/"/>
+    
+      <category term="vue" scheme="git@github.com:wangjinshen/wangjinshen.github.io.git/tags/vue/"/>
     
   </entry>
   
