@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>拖动 -position | 王瑾深 | 做一个爱折腾的程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="theme-color" content="#03A9F4">
+    
+    
+    <meta name="keywords" content="dom,position">
+    <meta name="description" content="关于一些拖动的小 demodemo先上 demo12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
+<meta name="keywords" content="dom,position">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拖动 -position">
+<meta property="og:url" content="git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/index.html">
+<meta property="og:site_name" content="王瑾深">
+<meta property="og:description" content="关于一些拖动的小 demodemo先上 demo12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-22T11:06:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拖动 -position">
+<meta name="twitter:description" content="关于一些拖动的小 demodemo先上 demo12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
+    
+        <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon-20190115095607402.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">王瑾深</h5>
+          <a href="mailto:807253330@qq.com" title="807253330@qq.com" class="mail">807253330@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangjinshen" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">拖动 -position</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">拖动 -position</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-22T08:15:31.000Z" itemprop="datePublished" class="page-time">
+  2019-01-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于一些拖动的小-demo"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于一些拖动的小 demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#demo"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#先上-demo"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">先上 demo</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过事件拿到位置信息的-API"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">通过事件拿到位置信息的 API</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#拖动-dom"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">拖动 dom</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过拖动改变-dom-宽度"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">通过拖动改变 dom 宽度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过拖动改变-dom-宽度和高度"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">通过拖动改变 dom 宽度和高度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#元素距离的一些获取方式"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">元素距离的一些获取方式</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-拖动-position" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">拖动 -position</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-22 16:15:31" datetime="2019-01-22T08:15:31.000Z" itemprop="datePublished">2019-01-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="关于一些拖动的小-demo"><a href="#关于一些拖动的小-demo" class="headerlink" title="关于一些拖动的小 demo"></a>关于一些拖动的小 demo</h1><h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><h3 id="先上-demo"><a href="#先上-demo" class="headerlink" title="先上 demo"></a>先上 demo</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            background: red;</span></span><br><span class="line"><span class="undefined">            position: fixed;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            top: 20px;</span></span><br><span class="line"><span class="undefined">            left: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .rightBottom,</span></span><br><span class="line"><span class="undefined">        .left &#123;</span></span><br><span class="line"><span class="undefined">            width: 20px;</span></span><br><span class="line"><span class="undefined">            height: 20px;</span></span><br><span class="line"><span class="undefined">            background: rgba(89, 98, 89, .8);</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            top: 50%;</span></span><br><span class="line"><span class="undefined">            right: 0;</span></span><br><span class="line"><span class="undefined">            transform: translate(50%, -50%);</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .rightBottom &#123;</span></span><br><span class="line"><span class="undefined">            top: 100%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"rightBottom"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">dom</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(dom);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">".box"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            e.stopPropagation();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> X = e.offsetX,</span></span><br><span class="line"><span class="undefined">                Y = e.offsetY</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                e.target.style.left = e.pageX - X + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="javascript">                e.target.style.top = e.pageY - Y + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="string">".left"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="undefined">            e.stopPropagation();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> originX = e.pageX,</span></span><br><span class="line"><span class="javascript">                width = $(<span class="string">".box"</span>).offsetWidth;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="string">".rightBottom"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            e.stopPropagation();</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> originX = e.pageX,</span></span><br><span class="line"><span class="undefined">                originY = e.pageY,</span></span><br><span class="line"><span class="javascript">                width = $(<span class="string">".box"</span>).offsetWidth,</span></span><br><span class="line"><span class="javascript">                height = $(<span class="string">".box"</span>).offsetHeight;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">".box"</span>).style.height = height + e.pageY - originY + <span class="string">"px"</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="通过事件拿到位置信息的-API"><a href="#通过事件拿到位置信息的-API" class="headerlink" title="通过事件拿到位置信息的 API"></a>通过事件拿到位置信息的 API</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">    <span class="comment">//clientX: 128</span></span><br><span class="line">    <span class="comment">//clientY: 87</span></span><br><span class="line">    <span class="comment">//点击的点相对view视口原点的距离</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// offsetX: 108</span></span><br><span class="line">   <span class="comment">// offsetY: 67</span></span><br><span class="line">   <span class="comment">//点击的点相对自身原点的距离</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// pageX: 128</span></span><br><span class="line">   <span class="comment">// pageY: 87</span></span><br><span class="line">   <span class="comment">//点击的点相对document原点的距离</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// screenX: 348</span></span><br><span class="line">   <span class="comment">// screenY: 400</span></span><br><span class="line">   <span class="comment">//点击的点相对屏幕原点的距离</span></span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="拖动-dom"><a href="#拖动-dom" class="headerlink" title="拖动 dom"></a>拖动 dom</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(e)</span><br><span class="line">           e.stopPropagation();</span><br><span class="line">           <span class="keyword">let</span> X = e.offsetX,</span><br><span class="line">               Y = e.offsetY</span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">               e.target.style.left = e.pageX - X + <span class="string">"px"</span>;</span><br><span class="line">               e.target.style.top = e.pageY - Y + <span class="string">"px"</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="通过拖动改变-dom-宽度"><a href="#通过拖动改变-dom-宽度" class="headerlink" title="通过拖动改变 dom 宽度"></a>通过拖动改变 dom 宽度</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".left"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">       e.preventDefault();</span><br><span class="line">       e.stopPropagation();</span><br><span class="line">       <span class="keyword">let</span> originX = e.pageX,</span><br><span class="line">           width = $(<span class="string">".box"</span>).offsetWidth;</span><br><span class="line">       <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">           $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="通过拖动改变-dom-宽度和高度"><a href="#通过拖动改变-dom-宽度和高度" class="headerlink" title="通过拖动改变 dom 宽度和高度"></a>通过拖动改变 dom 宽度和高度</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".rightBottom"</span>).onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">           <span class="comment">//阻止冒泡</span></span><br><span class="line">           e.stopPropagation();</span><br><span class="line">           <span class="comment">//取消默认事件</span></span><br><span class="line">           e.preventDefault();</span><br><span class="line">           <span class="comment">//按下时获取到当前点击的原点</span></span><br><span class="line">           <span class="keyword">let</span> originX = e.pageX,</span><br><span class="line">               originY = e.pageY,</span><br><span class="line">               <span class="comment">//按下时获取到当前元素的宽度和高度</span></span><br><span class="line">               width = $(<span class="string">".box"</span>).offsetWidth,</span><br><span class="line">               height = $(<span class="string">".box"</span>).offsetHeight;</span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">               <span class="comment">//e.pageX - originX</span></span><br><span class="line">               <span class="comment">// 移动时鼠标的距离原点的距离减去按下时原点的距离==要加的宽度或要减得宽度</span></span><br><span class="line">               $(<span class="string">".box"</span>).style.width = width + e.pageX - originX + <span class="string">"px"</span>;</span><br><span class="line">               $(<span class="string">".box"</span>).style.height = height + e.pageY - originY + <span class="string">"px"</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="comment">//抬起取消移动事件</span></span><br><span class="line">           <span class="built_in">document</span>.onmousemove = <span class="literal">null</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="元素距离的一些获取方式"><a href="#元素距离的一些获取方式" class="headerlink" title="元素距离的一些获取方式"></a>元素距离的一些获取方式</h2><ul>
+<li>$(“.box”).clientWidth;</li>
+<li>$(“.box”).clientHeight;</li>
+<li>$(“.box”).offsetWidth   （包含边线的宽）</li>
+<li>$(“.box”).offsetHeight （包含边线的高）;</li>
+<li>$(“.box”).offsetLeft (dom 元素距离定位元素的 left 父元素没有定位层层向上直到 document)</li>
+<li>$(“.box”).offsetTop (dom 元素距离定位元素的 Top 父元素没有定位层层向上直到 document)</li>
+<li>$(“.box”) 正文全文宽：  $(“.box”).scrollWidth;（含滚动条时，即滚动条从最顶端滚到最底端实际走过的距离）</li>
+<li>$(“.box”) 正文全文高：  $(“.box”).scrollHeight;（含滚动条时，即滚动条从最顶端滚到最底端实际走过的距离）</li>
+<li>$(“.box”) 被卷去的高：  $(“.box”).scrollTop;</li>
+<li>$(“.box”) 被卷去的左：  $(“.box”).scrollLeft;</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-22T11:06:22.000Z" itemprop="dateUpdated">2019-01-22 19:06:22</time>
+</span><br>
+
+
+        
+        falsed
+        
+    </div>
+    
+    <footer>
+        <a href="git@github.com:wangjinshen/wangjinshen.github.io.git">
+            <img src="/img/avatar.png" alt="王瑾深">
+            王瑾深
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dom/">dom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/position/">position</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/&title=《拖动 -position》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/&title=《拖动 -position》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拖动 -position》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/22/seo工具/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">seo工具</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/20/react合成事件对象控制台输出null的问题/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react对象控制台输出 null 的问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>王瑾深 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/&title=《拖动 -position》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/&title=《拖动 -position》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拖动 -position》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/22/拖动-position/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+</body>
+</html>

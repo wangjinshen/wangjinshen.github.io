@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vue-router | 王瑾深 | 做一个爱折腾的程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="theme-color" content="#03A9F4">
+    
+    
+    <meta name="keywords" content="vue,router">
+    <meta name="description" content="route安装 vue-roter12npm install vue-router --save-devyarn add vue-router -dev init 使用123456789101112131415161718192021222324 import VueRouter form &quot;vue-router&quot;// 挂载在全局上 Vue.use(VueRouter) //实例 const ro">
+<meta name="keywords" content="vue,router">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-router">
+<meta property="og:url" content="git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/index.html">
+<meta property="og:site_name" content="王瑾深">
+<meta property="og:description" content="route安装 vue-roter12npm install vue-router --save-devyarn add vue-router -dev init 使用123456789101112131415161718192021222324 import VueRouter form &quot;vue-router&quot;// 挂载在全局上 Vue.use(VueRouter) //实例 const ro">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-28T06:06:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-router">
+<meta name="twitter:description" content="route安装 vue-roter12npm install vue-router --save-devyarn add vue-router -dev init 使用123456789101112131415161718192021222324 import VueRouter form &quot;vue-router&quot;// 挂载在全局上 Vue.use(VueRouter) //实例 const ro">
+    
+        <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon-20190115095607402.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">王瑾深</h5>
+          <a href="mailto:807253330@qq.com" title="807253330@qq.com" class="mail">807253330@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangjinshen" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-router</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-router</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-18T01:03:28.000Z" itemprop="datePublished" class="page-time">
+  2019-01-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#route"><span class="post-toc-number">1.</span> <span class="post-toc-text">route</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-vue-roter"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装 vue-roter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#init-使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">init 使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面配置"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">页面配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换路由"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">切换路由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导航守卫"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">导航守卫</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导航”表示路由正在发生改变。"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">导航”表示路由正在发生改变。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#route-beforeEach"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">route.beforeEach</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局解析首位"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">全局解析首位</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局后置钩子"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">全局后置钩子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#路由独享的守卫"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">路由独享的守卫</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组件内的守卫"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">组件内的守卫</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整的导航解析流程"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">完整的导航解析流程</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue-route" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-router</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-18 09:03:28" datetime="2019-01-18T01:03:28.000Z" itemprop="datePublished">2019-01-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="route"><a href="#route" class="headerlink" title="route"></a>route</h1><h2 id="安装-vue-roter"><a href="#安装-vue-roter" class="headerlink" title="安装 vue-roter"></a>安装 vue-roter</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save-dev</span><br><span class="line">yarn add vue-router -dev</span><br></pre></td></tr></table></figure>
+<h2 id="init-使用"><a href="#init-使用" class="headerlink" title="init 使用"></a>init 使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> VueRouter form <span class="string">"vue-router"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 挂载在全局上</span></span><br><span class="line"> Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"> <span class="comment">//实例</span></span><br><span class="line"> <span class="keyword">const</span> route = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">     <span class="comment">// 配置路由</span></span><br><span class="line">     routes:[</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">// 路由地址</span></span><br><span class="line">             path: <span class="string">'/'</span>,</span><br><span class="line">             <span class="comment">// 当路由是默认 "/" 时加载”/index 路由</span></span><br><span class="line">             redirect: <span class="string">'/index'</span></span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">         &#123;</span><br><span class="line"></span><br><span class="line">             path:<span class="string">"/index"</span>，</span><br><span class="line">             <span class="comment">// 在&lt;router-view&gt;&lt;/router-view&gt;显示的内容组件</span></span><br><span class="line">             component:index，<span class="comment">//index 是一个组件</span></span><br><span class="line">         &#125;</span><br><span class="line">     ]</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view&gt;&lt;/router-view&gt;标签  显示路由中 component 引进的内容</span><br></pre></td></tr></table></figure>
+<h2 id="切换路由"><a href="#切换路由" class="headerlink" title="切换路由"></a>切换路由</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/index&quot; tag=&quot;span&quot;&gt;index&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">to: 属性制指定跳转到某一个路由</span><br><span class="line"></span><br><span class="line"> 例：/index</span><br><span class="line">    当点击后&lt;router-view&gt;&lt;/router-view&gt;内将会显示 /index 中的组件</span><br><span class="line"></span><br><span class="line">tsg：指定在页面中显示出什么类型的 的标签</span><br><span class="line"></span><br><span class="line">    例如：tag=&quot;span&quot; 在以页面中 &lt;router-link&gt;标签会转为 span 标签显示</span><br></pre></td></tr></table></figure>
+<h2 id="导航守卫"><a href="#导航守卫" class="headerlink" title="导航守卫"></a>导航守卫</h2><h2 id="导航”表示路由正在发生改变。"><a href="#导航”表示路由正在发生改变。" class="headerlink" title="导航”表示路由正在发生改变。"></a>导航”表示路由正在发生改变。</h2><p>主要用来通过跳转或取消的方式守卫导航</p>
+<p>有多种机会植入路由导航过程中：全局的，单个路由独享的，或者组件级的。</p>
+<p>参数或查询的改变并不会触发进入 / 离开的导航守卫</p>
+<h2 id="route-beforeEach"><a href="#route-beforeEach" class="headerlink" title="route.beforeEach"></a>route.beforeEach</h2><p><code>route</code> 是 vue-<code>router</code> 的实例</p>
+<p>注册一个全局前置守卫：<br>route.beforeEach(to,from,next){</p>
+<p>}</p>
+<p><code>to</code>:  即将要进入的目标 路由对象</p>
+<p><code>from</code>: 当前导航正要离开的路由</p>
+<p><code>next</code>: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 <code>next</code> 方法的调用参数。<br>不调用不执行</p>
+<p><code>next</code>(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed （确认的）。</p>
+<p><code>next(false)</code>: 中断当前的导航。如果浏览器的 URL 改变了 （可能是用户手动或者浏览器后退按钮），那么 URL 地址会重置到 from 路由对应的地址。</p>
+<p><code>next(&#39;/&#39;)</code> 或者 <code>next({ path: &#39;/&#39; })</code>：跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。<br>你可以向 next 传递任意位置对象<br>且允许设置诸如<code>replace: true、name: &#39;home&#39;</code>之类的选项以及任何用在 <code>router-link</code> 的 <code>to prop</code>或 <code>router.push</code> 中的选项。</p>
+<h2 id="全局解析首位"><a href="#全局解析首位" class="headerlink" title="全局解析首位"></a>全局解析首位</h2><p>2.5.0+ 你可以用<code>router.beforeResolve</code> 注册一个全局守卫。这和 <code>router.beforeEach</code> 类似，区别是在导航被确认之前，<br>同时在所有组件内守卫和异步路由组件被解析之后，<br>解析守卫就被调用。</p>
+<h2 id="全局后置钩子"><a href="#全局后置钩子" class="headerlink" title="全局后置钩子"></a>全局后置钩子</h2><p>你也可以注册全局后置钩子，然而和守卫不同的是，这些钩子不会接受 next 函数也不会改变导航本身：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="路由独享的守卫"><a href="#路由独享的守卫" class="headerlink" title="路由独享的守卫"></a>路由独享的守卫</h2><p>可以在路由配置上直接定义 <code>beforeEnter</code></p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">routes: [</span><br><span class="line">    &#123;</span><br><span class="line">    path: <span class="string">'/foo'</span>,</span><br><span class="line">    component: Foo,</span><br><span class="line">    beforeEnter: <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="组件内的守卫"><a href="#组件内的守卫" class="headerlink" title="组件内的守卫"></a>组件内的守卫</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = &#123;</span><br><span class="line">template: <span class="string">`...`</span>,</span><br><span class="line">beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在渲染该组件的对应路由被 confirm 前调用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不！能！获取组件实例 `this`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 因为当守卫执行前，组件实例还没被创建</span></span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteUpdate (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在当前路由改变，但是该组件被复用时调用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以访问组件实例 `this`</span></span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteLeave (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导航离开该组件的对应路由时调用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以访问组件实例 `this`</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line"><span class="built_in">console</span>.log(to)</span><br><span class="line">next()</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">props:&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">components:&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">data()&#123;</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed:&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">created()&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">mounted()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>beforRouteEnter  不能获取到 this    但是也可通 next 的回调函数获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    next(<span class="function"><span class="params">vm</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 通过 vm 访问组件实例</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个离开守卫通常用来禁止用户在还未保存修改前突然离开。该导航可以通过 next(false) 来取消。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteLeave (to, <span class="keyword">from</span> , next) &#123;</span><br><span class="line">    <span class="keyword">const</span> answer = <span class="built_in">window</span>.confirm(<span class="string">'Do you really want to leave? you have unsaved changes!'</span>)</span><br><span class="line">    <span class="keyword">if</span> (answer) &#123;</span><br><span class="line">        <span class="comment">// 为 true 就执行跳转路由</span></span><br><span class="line">        next()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        反之就停止跳转  留在当前的路由</span><br><span class="line">        next(<span class="literal">false</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="完整的导航解析流程"><a href="#完整的导航解析流程" class="headerlink" title="完整的导航解析流程"></a>完整的导航解析流程</h2><ol>
+<li>导航被触发。</li>
+<li>在失活的组件里调用离开守卫。</li>
+<li>调用全局的 beforeEach 守卫。</li>
+<li>在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。</li>
+<li>在路由配置里调用 beforeEnter。</li>
+<li>解析异步路由组件。</li>
+<li>在被激活的组件里调用 beforeRouteEnter。</li>
+<li>调用全局的 beforeResolve 守卫 (2.5+)。</li>
+<li>导航被确认。</li>
+<li>调用全局的 afterEach 钩子。</li>
+<li>触发 DOM 更新。</li>
+<li>用创建好的实例调用 beforeRouteEnter 守卫中传给 next 的回调函数。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-28T06:06:48.000Z" itemprop="dateUpdated">2019-01-28 14:06:48</time>
+</span><br>
+
+
+        
+        falsed
+        
+    </div>
+    
+    <footer>
+        <a href="git@github.com:wangjinshen/wangjinshen.github.io.git">
+            <img src="/img/avatar.png" alt="王瑾深">
+            王瑾深
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/router/">router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/&title=《vue-router》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/&title=《vue-router》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-router》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/19/mysql-连接池/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">node- 连接 mysql</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/16/action/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">redux-action</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>王瑾深 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/&title=《vue-router》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/&title=《vue-router》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-router》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/01/18/vue-route/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+</body>
+</html>
