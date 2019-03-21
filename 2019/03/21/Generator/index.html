@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Generator | 王瑾深 | 做一个爱折腾的程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="theme-color" content="#03A9F4">
+    
+    
+    <meta name="keywords" content="es6,异步">
+    <meta name="description" content="Generator函数基本概念Generator 函数是 ES6 提供的一种异步编程解决方案，语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。 执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。 形式上，Gene">
+<meta name="keywords" content="es6,异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Generator">
+<meta property="og:url" content="git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/index.html">
+<meta property="og:site_name" content="王瑾深">
+<meta property="og:description" content="Generator函数基本概念Generator 函数是 ES6 提供的一种异步编程解决方案，语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。 执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。 形式上，Gene">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-21T13:23:38.437Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Generator">
+<meta name="twitter:description" content="Generator函数基本概念Generator 函数是 ES6 提供的一种异步编程解决方案，语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。 执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。 形式上，Gene">
+    
+        <link rel="alternate" type="application/atom+xml" title="王瑾深" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon-20190115095607402.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">王瑾深</h5>
+          <a href="mailto:807253330@qq.com" title="807253330@qq.com" class="mail">807253330@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangjinshen" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Generator</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Generator</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-21T11:15:08.000Z" itemprop="datePublished" class="page-time">
+  2019-03-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Generator函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">Generator函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#区别"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#假设我们想要获取最后一个值"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">假设我们想要获取最后一个值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yield表达式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">yield表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#与-Iterator-接口的关系"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">与 Iterator 接口的关系</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#next-方法的参数"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">next 方法的参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#未完待续"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">未完待续</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Generator" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Generator</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-21 19:15:08" datetime="2019-03-21T11:15:08.000Z" itemprop="datePublished">2019-03-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>Generator 函数是 ES6 提供的一种异步编程解决方案，语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。</p>
+<p>执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。</p>
+<p>形式上，Generator 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield表达式，定义不同的内部状态（yield在英语里的意思就是“产出”）。</p>
+<p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第一次调用"</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第二次调用"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"第三次"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn1 = fn()</span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: '第一次调用', done: false &#125; ''</span></span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: '第二次调用', done: false &#125; ''</span></span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: '第三次', done: true &#125; ''</span></span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: undefined, done: true &#125; ''</span></span><br></pre></td></tr></table></figure></p>
+<p>第一次调用，Generator 函数开始执行，直到遇到第一个<code>yield</code>表达式为止。<code>next</code>方法返回一个对象，它的<code>value</code>属性就是当前<code>yield</code>表达式的值<code>第一次调用</code>，<code>done</code>属性的值<code>false</code>，表示遍历还没有结束。</p>
+<p>第二次调用，Generator 函数从上次<code>yield</code>表达式停下的地方，一直执行到下一个<code>yield</code>表达式。<code>next</code>方法返回的对象的value属性就是当前<code>yield</code>表达式的值<code>第二次调用</code>，<code>done</code>属性的值<code>false</code>，表示遍历还没有结束。</p>
+<p>第三次调用，Generator 函数从上次<code>yield</code>表达式停下的地方，一直执行到<code>return</code>语句（如果没有<code>return</code>语句，就执行到函数结束）。<code>next</code>方法返回的对象的<code>value</code>属性，就是紧跟在<code>return</code>语句后面的表达式的值（如果没有<code>return</code>语句，则value属性的值为<code>undefined</code>），<code>done</code>属性的值<code>true</code>，表示遍历已经结束。</p>
+<p>第四次调用，此时 Generator 函数已经运行完毕，<code>next</code>方法返回对象的<code>value</code>属性为<code>undefined</code>，<code>done</code>属性为<code>true</code>。以后再调用<code>next</code>方法，返回的都是这个值。</p>
+<p>我们在试一下没有return结果会怎样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第一次调用"</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第二次调用"</span>;</span><br><span class="line">    <span class="comment">// return "第三次"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn1 = fn()</span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: '第一次调用', done: false &#125; ''</span></span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: '第二次调用', done: false &#125; ''</span></span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: undefined, done: true &#125; ''</span></span><br><span class="line"><span class="built_in">console</span>.log(fn1.next(), <span class="string">''</span>) <span class="comment">//&#123; value: undefined, done: true &#125; ''</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li><p>当调用<code>Generator</code>函数中有<code>return</code>值的时候 通过<code>next</code>执行到<code>return</code>是返回的时会返回 <code>return</code>的值并且<code>done</code>返回<code>true</code>表示已经执行结束，</p>
+</li>
+<li><p>当调用<code>Generator</code>函数中有<code>return</code>值的时候 通过<code>next</code>执行到最后一个值的时候 <code>done</code>并不会返回<code>true</code>,因为它并不知到当前值为最后一个值，再次调用他会返回一个<code>undefined</code> <code>done</code>返回<code>true</code>表示已经执行结束，但是如果我们通过 <code>done</code>返回作为判断条件的话 有<code>return</code> 会及时停止返回</p>
+</li>
+</ul>
+<h3 id="假设我们想要获取最后一个值"><a href="#假设我们想要获取最后一个值" class="headerlink" title="假设我们想要获取最后一个值"></a>假设我们想要获取最后一个值</h3><p>代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第一次调用"</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第二次调用"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"第三次"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn1 = fn()</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNext</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val= fn1.next()</span><br><span class="line">    <span class="keyword">if</span> (val.done) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(val)<span class="comment">//&#123; value: '第三次', done: true &#125; ''</span></span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    &#125;</span><br><span class="line">    getNext()</span><br><span class="line">&#125;</span><br><span class="line">getNext()</span><br></pre></td></tr></table></figure>
+<p>没有<code>return</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第一次调用"</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"第二次调用"</span>;</span><br><span class="line">    <span class="comment">// return "第三次"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn1 = fn()</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNext</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val= fn1.next()</span><br><span class="line">    <span class="keyword">if</span> (val.done) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(val)<span class="comment">//&#123; value: undefined, done: true &#125; ''</span></span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    &#125;</span><br><span class="line">    getNext()</span><br><span class="line">&#125;</span><br><span class="line">getNext()</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>调用Generator 函数，会返回一个遍历对象，代表 Generator 函数的内部指针,以后，每次调用对象的<code>next</code>方法，就会返回一个带有<code>value</code>和<code>done</code>两个属性的对象。<code>value</code>表示当前内部状态的值，也就是<code>yield</code>后面的表达式例如：<code>yield &quot;第一次调用&quot;;</code>返回<code>yield</code>后面的值;<code>done</code>的属性返回的是一个布尔值，表示便利是否结束</p>
+</blockquote>
+<h2 id="yield表达式"><a href="#yield表达式" class="headerlink" title="yield表达式"></a>yield表达式</h2><p>由于 Generator 函数返回的遍历器对象，只有调用<code>next</code>方法才会遍历下一个内部状态，所以其实提供了一种可以暂停执行的函数。<code>yield</code>表达式就是暂停标志。</p>
+<p>需要注意的是，<code>yield</code>表达式后面的表达式，只有当调用<code>next</code>方法、内部指针指向该语句时才会执行，因此等于为 <code>JavaScript</code> 提供了手动的“<code>惰性求值</code>”（Lazy Evaluation）的语法功能。</p>
+<p>也就是说只有通过手动的<code>next</code>的调用才会去执行返回值 没有<code>next</code>方法调用的话的话就不会被触发</p>
+<p>Generator 函数可以不用yield表达式，这时就变成了一个单纯的暂缓执行函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'执行了！'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> generator = f();</span><br><span class="line">  </span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    generator.next()</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="与-Iterator-接口的关系"><a href="#与-Iterator-接口的关系" class="headerlink" title="与 Iterator 接口的关系"></a>与 Iterator 接口的关系</h2><p>任意一个对象的<code>Symbol.iterator</code>方法，等于该对象的遍历器生成函数，调用该函数会返回该对象的一个遍历器对象。</p>
+<p>由于 Generator 函数就是遍历器生成函数，因此可以把 Generator 赋值给对象的<code>Symbol.iterator</code>属性，从而使得该对象具有 <code>Iterator</code> 接口。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myIterable = &#123;&#125;;</span><br><span class="line">myIterable[<span class="built_in">Symbol</span>.iterator] = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> iterator <span class="keyword">of</span> myIterable) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(iterator)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，Generator 函数赋值给<code>Symbol.iterator</code>属性，从而使得<code>myIterable</code>对象具有了 <code>Iterator</code> 接口，可以被遍历了。</p>
+<h2 id="next-方法的参数"><a href="#next-方法的参数" class="headerlink" title="next 方法的参数"></a>next 方法的参数</h2><p><code>yield</code>表达式本身没有返回值，或者说总是返回<code>undefined</code>。<code>next</code>方法可以带一个参数，该参数就会被当作上一个<code>yield</code>表达式的返回值。</p>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-21T13:23:38.437Z" itemprop="dateUpdated">2019-03-21 21:23:38</time>
+</span><br>
+
+
+        
+        falsed
+        
+    </div>
+    
+    <footer>
+        <a href="git@github.com:wangjinshen/wangjinshen.github.io.git">
+            <img src="/img/avatar.png" alt="王瑾深">
+            王瑾深
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步/">异步</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/&title=《Generator》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/&title=《Generator》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Generator》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/02/24/如何监听一个对象的变化/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">如何监听一个对象的变化</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>王瑾深 &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/&title=《Generator》 — 王瑾深&pic=git@github.com:wangjinshen/wangjinshen.github.io.git/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/&title=《Generator》 — 王瑾深&source=王瑾深的个人主页,王瑾深,做一个爱折腾的程序员,web王瑾深,王瑾深,程序员王瑾深,王瑾深的博客,商丘王瑾深" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Generator》 — 王瑾深&url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/&via=git@github.com:wangjinshen/wangjinshen.github.io.git" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=git@github.com:wangjinshen/wangjinshen.github.io.git/2019/03/21/Generator/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+</body>
+</html>
